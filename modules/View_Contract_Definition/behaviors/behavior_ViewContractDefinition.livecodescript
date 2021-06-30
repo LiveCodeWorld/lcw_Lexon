@@ -1,22 +1,18 @@
-﻿script "behavior_ViewContractClause"
+﻿script "behavior_ViewContractDefinition"
 --> MetaData
 -
 copyright: David Bovill
 license: GPLv3
-name: behavior_ViewContractClause
+name: behavior_ViewContractDefinition
 type: behavior
 version: 0.1
-
---> Variables
--
-local LocalArray
 
 
 --> DataView
 -
 setProp dvHilite [pHiliteColor] pBoolean
    if pBoolean then
-      set the backgroundcolor of graphic "Background" of me to "yellow"
+      set the backgroundcolor of graphic "Background" of me to "light green"
    else
       set the backgroundcolor of graphic "Background" of me to pHiliteColor
    end if
@@ -37,7 +33,7 @@ setprop clause_Colour [clauseText] defColour
    --
    put the contract_ClauseTitles of me into clauseTitles
    put the contract_DefTitles of me into defTitles
-   put the contract_Terms of me into contractTerms
+   put the contract_TermTitles of me into termTitles
    put lexon_GetClauseCapsArray (clauseText) into clauseArray
    --
    put item 2 of the extents of clauseArray into maxNumm
@@ -54,7 +50,7 @@ setprop clause_Colour [clauseText] defColour
          case somePhrase is among the lines of clauseTitles
             set the textcolor of word sWordNum to eWordNum of textField to clauseColour
             break
-         case somePhrase is among the lines of contractTerms
+         case somePhrase is among the lines of termTitles
             set the textcolor of word sWordNum to eWordNum of textField to termColour
             break
          case somePhrase is among the lines of defTitles
@@ -502,4 +498,5 @@ end _ViewIcon
 private function _GraphicObject
    return the long id of graphic "Background" of me
 end _GraphicObject
+
 

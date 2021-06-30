@@ -25,29 +25,35 @@ end menu_Target
 
 --> Global | Lexon | Menu
 -
-on menu_TestLexonContract
-   put "HyQ8s2di_" into hackmdID
-   
-   put lexon_FetchContract (hackmdID, false) into lexBody
-   put lexon_FetchContractData (lexBody) into termData
-   put lexon_ConstructDataViewArray (termData) into dData
-   --
-   display_Data dData, hackmdID, "Lexon Contract"
-end menu_TestLexonContract
-
-on menu_DisplayContractData
-   -- put url "https://hackmd.io/@lexon/HyQ8s2di_/download" into lexText
-   put lexon_FetchContract ("HyQ8s2di_", false) into lexBody
-   --
-   display_LexonContract lexBody
-end menu_DisplayContractData
+on menu_DisplayLexonContract
+   display_LexonContract
+end menu_DisplayLexonContract
 
 on _
 end _
 
+on submenu_Display
+   return "Display | Menu"
+end submenu_Display
+
 on submenu_Dev
    return "Dev | Menu"
 end submenu_Dev
+
+
+--> Display | Menu
+-
+on menu_LexonDataViewArray
+   put lexon_FetchDataFromHackMD ("HyQ8s2di_") into dData
+   --
+   display_Data dData, hackmdID, "Lexon Contract"
+end menu_LexonDataViewArray
+
+on menu_LexonContractData
+   put lexon_FetchContract ("HyQ8s2di_", false) into lexBody
+   --
+   display_LexonContract lexBody
+end menu_LexonContractData
 
 
 --> Dev | Menu
