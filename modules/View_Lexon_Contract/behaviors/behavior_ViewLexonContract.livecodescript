@@ -11,19 +11,60 @@ version: 0.1
 -
 local LocalArray
 
-function CacheKeyForRow pRow
-   put the dvData of me into sDataA
-   return sDataA [pRow]["id"]
+function CacheKeyForRow rowNum
+   put the dvData of me into dData
+   put dData [rowNum] into rowData
+   put rowData ["id"] into rowID
+   return rowID
 end CacheKeyForRow
 
 
 --> Working on
 -
+on mouseDoubleUp
+   put the dvRowControl of the target into rowView
+   put the dvRow of rowView into rowNum
+   --
+   put the dv_RowData of rowView into rowData
+   put rowData ["@style"] into itemStyle
+   --
+   dispatch "EditKeyOfRow" to rowView with itemStyle,rowNum
+   
+   /*
+   if the optionKey is "Down" then breakpoint
+   put the dvRowControl of the target into rowView
+   put the dv_RowData of the target into rowData
+   put rowData ["text"] into itemText
+   
+   put rowData ["@style"] into itemStyle
+   switch itemStyle
+      case "clause"
+         lexon_Transfer rowView, rowData
+         break
+      case "markdown"
+         dv_ShowHtml itemText
+         break
+      default
+         put itemStyle & CR & itemText
+   end switch
+   --
+   if the optionKey is "Down" then
+      put the dv_RowBehavior of the target into rowTemplate
+      put the behavior of rowTemplate into bObject
+      edit the script of bObject
+   end if
+   */
+end mouseDoubleUp
+
 on linkClicked somePhrase
+   put the dvRowControl of the target into rowView
+   --
    lexon_StripPunctuation somePhrase
    put the contract_ClauseTitles of me into clauseTitles
    put the contract_DefTitles of me into defTitles
-   put the dv_RowValue ["@style"] of the target into rowStyle
+   put the contract_Terms of me into contractTerms
+   --
+   put the dv_RowData of the target into rowData
    --
    switch
       case somePhrase is among the lines of clauseTitles
@@ -32,28 +73,69 @@ on linkClicked somePhrase
       case somePhrase is among the lines of defTitles
          set the selected_Def of me to somePhrase
          break
+      case somePhrase is among the lines of contractTerms
+         set the selected_Term of me to somePhrase
+         break
       default
          put somePhrase
    end switch
 end linkClicked
 
+getprop link_Array
+   put the dvRowControl of the target into rowView
+   if exists (rowView) is false then return empty
+   --
+   put the dvData of rowView into dData
+   put the dvRow of rowView into rowNum
+   -- put the dv_RowData of rowView into rowData
+   -- put the lexon_RowTitle of rowView into fromTitle
+   --
+   put lexon_GetLinkArray (rowNum, dData) into linkArray
+   --
+   return linkArray
+end link_Array
+
+getprop lexon_RowTitle
+   put the dvRowControl of the target into rowView
+   if exists (rowView) is false then return empty
+   --   
+   put lexon_GetRowTitle (rowNum, dData) into rowTitle
+   return rowTitle
+end lexon_RowTitle
+
+getprop row_DataAbove [pLevel]
+   put the dvRowControl of the target into rowView
+   if exists (rowView) is false then return empty
+   put the dvRow of rowView into rowNum
+   if rowNum is empty then return empty
+   
+   put the dvData of me into dData
+   put row_GetDataAbove (rowNum, dData, pLevel) into rowDataAbove
+   --
+   return rowDataAbove
+end row_DataAbove
+
+setprop selected_Term somePhrase
+   put the displayed_Data of me into dData
+   put lexon_FindTerm (somePhrase, dData) into rowNum
+   --
+   if rowNum is a number then
+      set the dvHilitedRows of me to rowNum
+   end if
+end selected_Term
+
 setprop selected_Def somePhrase
    put the displayed_Data of me into dData
-   put lexon_GetContractDefArray (dData) into defData
+   put lexon_FindDef (somePhrase, dData) into rowNum
    --
-   put defData [somePhrase] into defArray
-   put defArray [1]["dData rowNum"] into rowNum
-   set the dvHilitedRows of me to rowNum
-   --
-   put somePhrase && rowNum
-   display_Data defArray, somePhrase, "Lexon Definition"
+   if rowNum is a number then
+      set the dvHilitedRows of me to rowNum
+   end if
 end selected_Def
 
 setprop selected_Clause clauseTitle
    put the displayed_Data of me into dData
-   put lexon_GetContractLinkArray (dData) into cLinkArray
-   --
-   put cLinkArray ["meta"][clauseTitle]["itemNum"] into rowNum
+   put lexon_FindClause (clauseTitle, dData) into rowNum
    --
    if rowNum is not empty then
       set the dvHilitedRows of me to rowNum
@@ -67,6 +149,35 @@ end selected_Clause
 
 --> Props
 -
+getprop lexon_RowLinkArray
+   put the dvRowControl of the target into rowView
+   if exists (rowView) is false then return empty
+   --
+   put the dv_RowData of rowView into rowData
+   --
+   put rowData ["title"] into clauseTitle
+   put lexon_GetClauseTitle (clauseTitle) into clauseTitle
+   --
+   put rowData ["links"] into linkData
+   repeat for each key itemNum in linkData
+      put linkData [itemNum]["text"] into linkPhrase
+      _CleanLink linkPhrase
+      put linkPhrase & comma after linkItems
+      put empty into linkArray [clauseTitle][linkPhrase]
+   end repeat
+   return linkArray
+end lexon_RowLinkArray
+
+private command _CleanLink @linkPhrase
+   -- issues with utf8???
+   
+   replace "’" with "'" in linkPhrase
+   put utf8_Encode (linkPhrase) into linkPhrase
+   -- put utf8_Decode (linkPhrase) into linkPhrase
+   -- replace "'" with empty in linkPhrase
+   -- replace "‚Äô" with "'" in linkPhrase
+end _CleanLink
+
 getprop auto_Scroll
    put the viewprop ["scroll selections into view"] of me into someBoolean
    return someBoolean
@@ -101,47 +212,20 @@ getprop clause_TermTitle
    return termTitleAbove
 end clause_TermTitle
 
-getprop row_DataAbove [pLevel]
-   put the dvRowControl of the target into rowView
-   if exists (rowView) is false then return empty
-   --
-   put the dvRow of rowView into rowNum
-   if rowNum is empty then return empty
-   
+
+--> Props | Contract
+-
+getprop contract_TitleArray
    put the dvData of me into dData
+   put lexon_GetContractTitleArray (dData) into titleArray
    --
-   put dData [rowNum] into startRowData
-   if pLevel is empty then
-      get startRowData ["level"]
-      if it is empty then
-         put 2 into levelAbove -- hack
-      else
-         put it - 1 into levelAbove
-      end if
-   else
-      put pLevel into levelAbove
-   end if
-   --
-   put rowNum - 1 into startRowNum
-   repeat with itemNum = startRowNum down to 1
-      put dData [itemNum] into rowData
-      put rowData ["level"] into sLevel
-      --
-      if sLevel is empty then put 3 into sLevel -- hack
-      --
-      if sLevel <= levelAbove then
-         return rowData
-      end if
-   end repeat
-   return empty
-end row_DataAbove
+   return titleArray
+end contract_TitleArray
 
 getprop contract_Terms
    put the dvData of me into dData
-   put _GetTermTitleArray (dData) into termTitleArray
-   put termTitleArray ["termTitleDictionary"] into termTitleDictionary
-   put the keys of termTitleDictionary into termTitles
-   return termTitles
+   put lexon_ListContractTerms (dData) into contractTerms
+   return contractTerms
 end contract_Terms
 
 getprop contract_TermTitles
@@ -178,10 +262,36 @@ getprop clause_Titles
    return clauseTitles
 end clause_Titles
 
+getprop lexon_SectionData [rowNum]
+   put the dvRowControl of the target into rowView
+   if exists (rowView) is false then
+      get the name of the target
+      breakpoint
+      return empty
+   end if
+   
+   put the dv_SectionItems [rowNum] of rowView into rowNums
+   --
+   put the dvData of me into dData
+   put 1 into itemNum
+   repeat for each item rowNum in rowNums
+      put dData [rowNum] into newData [itemNum]
+      add 1 to itemNum
+   end repeat
+   return newData
+end lexon_SectionData
+
 getprop dv_SectionItems [rowNum]
    put the dvData of the target into dData
+   put the dvRowControl of the target into rowView
+   if exists (rowView) is false then
+      get the name of the target
+      breakpoint
+      return empty
+   end if
+   -- 
    if rowNum is empty then
-      put the dvRow of the target into rowNum
+      put the dvRow of rowView into rowNum
    end if
    put dData [rowNum]["level"] into sLevel
    --
@@ -247,36 +357,11 @@ on mouseDown pButton
    end switch
 end mouseDown
 
-on mouseDoubleUp
-   if the optionKey is "Down" then breakpoint
-   
-   put the dvRowControl of the target into rowView
-   put the dv_RowData of the target into rowData
-   put rowData ["text"] into itemText
-   
-   put rowData ["@style"] into itemStyle
-   switch itemStyle
-      case "clause"
-         lexon_Transfer rowView, rowData
-         break
-      case "markdown"
-         dv_ShowHtml itemText
-         break
-      default
-         put itemStyle & CR & itemText
-   end switch
-   --
-   if the optionKey is "Down" then
-      put the dv_RowBehavior of the target into rowTemplate
-      put the behavior of rowTemplate into bObject
-      edit the script of bObject
-   end if
-end mouseDoubleUp
-
 on preOpenControl
    -- to load can just get the name. Hope this makes the behavior work.
    get the name of stack "View|Contract|Title"
    get the name of stack "View|Contract|Clause"
+   get the name of stack "View|Contract|Definition"
    --
    dispatch "ResetView" to me
    dispatch "RenderView" to me

@@ -12,12 +12,22 @@ version: 0.1
 
 --> Working on
 -
-function clause_ListUniqueTitles clauseData
-   put clause_GetUniqueTitleData (clauseData) into titleData
-   put keys (titleData) into uniqueClauseTitles
-   sort lines of uniqueClauseTitles
-   return uniqueClauseTitles
+-- function clause_ListUniqueTitles clauseData
+put clause_GetUniqueTitleData (clauseData) into titleData
+put keys (titleData) into uniqueClauseTitles
+sort lines of uniqueClauseTitles
+return uniqueClauseTitles
 end clause_ListUniqueTitles
+
+--  function clause_GetUniqueTitleData clauseData
+put clauseData ["links"] into linkData
+repeat with itemNum = 1 to item 2 of the extents of linkData
+   put linkData [itemNum]["text"] into sPhrase
+   replace quote with empty in sPhrase
+   put empty into titleData [sPhrase]
+end repeat
+return titleData
+end clause_GetUniqueTitleData
 
 
 --> Display | Lexon
@@ -99,10 +109,8 @@ command lexon_Transfer rowView
    put rowData ["@style"] into itemStyle
    switch itemStyle
       case "clause"
-         -- put the clause_Text of rowView into clauseText
          put rowData ["text"] into utf8Clause
          put rowData ["title"] into clauseTitle
-         --
          break
       case "markdown"
          get the markdown_Text of rowView
@@ -115,7 +123,8 @@ command lexon_Transfer rowView
    --
    put lexon_CleanClause (utf8Clause) into someClause
    put view_GetTemplateObject ("View|Contract|Clause") into templateObject
-   set the clause_Text ["red"] of templateObject to someClause
+   
+   -- set the clause_Text ["red"] of templateObject to someClause
    --
    object_GoTo templateObject
 end lexon_Transfer

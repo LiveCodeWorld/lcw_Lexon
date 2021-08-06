@@ -10,7 +10,7 @@ version: 0.1
 --> Events
 -
 getprop project_Deps
-   return "lcw,lcw_Tools,lcw_Authoring,lcw_GIT,lcw_Revigniter,lcw_Script,lcw_Google,lcw_Media,lcw_Chat,lcw_Graph,lcw_Forms"
+   return "lcw,lcw_Tools,lcw_Authoring,lcw_GIT,lcw_Revigniter,lcw_Script,lcw_Help,lcw_Media,lcw_Atopia,lcw_Forms,lcw_Graph"
 end project_Deps
 
 
@@ -22,6 +22,7 @@ on preOpenStack
    else
       lcw_Init
       env_RecursivelyLoadProjects
+      display_LexonContract
    end if
 end preOpenStack
 

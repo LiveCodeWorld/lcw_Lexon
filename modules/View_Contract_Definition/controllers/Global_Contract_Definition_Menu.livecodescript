@@ -17,47 +17,35 @@ local LocalArray
 
 --> Menu | Props
 -
-on menu_Init tObject
-   -- called only once for top menu
-  pass menu_Init
-end menu_Init
-
 getprop menu_Target [tObject]
-   -- called once for each menu
-   return the display_View of tObject
+   put the dvRowControl of tObject into rowView
+   return rowView
 end menu_Target
-
-getprop menu_CheckTarget [mTarget]
-   -- use to do initialisation
-   pass menu_CheckTarget
-end menu_CheckTarget
-
-getprop test_Param [mTarget]
-  return "b"
-end test_Param
-
-getprop test_Params [mTarget]
-   return "a,b,c"
-end test_Params
-
-getprop checked_TestChecked
-   return true
-end checked_TestChecked
-
-getprop disabled_Test
-  return false -- true, "delete"
-end disabled_Test
 
 
 --> Global | Contract | Definition | Menu
 -
-on menu_Test displayView, abc
-   put displayView & CR & abc
-end menu_Test
+on menu_ColourDefinition rowView
+   set the clause_Colour of rowView to "Purple"
+end menu_ColourDefinition
 
-on menu_TestChecked
-  put menu_GetChecked (the params)
-end menu_TestChecked
+on menu_GraphDeps rowView
+   put the lexon_RowLinkArray of rowView into linkArray
+   display_LinkArrayGraph linkArray
+end menu_GraphDeps
+
+on _
+end _
+
+getprop checked_ShowIcon [rowView]
+   put the icon_isVisible of rowView into isShowing
+   return isShowing
+end checked_ShowIcon
+   
+on menu_ShowIcon rowView
+   put the icon_isVisible of rowView into isShowing
+   set the icon_isVisible of rowView to (isShowing is false)
+end menu_ShowIcon
 
 on _
 end _
@@ -69,9 +57,10 @@ end submenu_Dev
 
 --> Dev | Menu
 -
-on menu_Experiment displayView
-   put displayView
-end menu_Experiment
+on menu_EditRowBehavior rowView
+   put the behavior of rowView into bObject
+   edit the script of bObject
+end menu_EditRowBehavior
 
 
 --> Deps

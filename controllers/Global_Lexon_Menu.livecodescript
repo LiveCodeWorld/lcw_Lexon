@@ -1,7 +1,7 @@
 ﻿script "Global | Lexon | Menu"
 --> MetaData
 -
-copyright: Anonymous
+copyright: David Bovill
 license: GPLv3
 name: Global | Lexon | Menu
 type: controller
@@ -29,6 +29,10 @@ on menu_DisplayLexonContract
    display_LexonContract
 end menu_DisplayLexonContract
 
+on menu_DisplayLexonTools
+   display_LexonTools
+end menu_DisplayLexonTools
+
 on _
 end _
 
@@ -41,7 +45,7 @@ on submenu_Dev
 end submenu_Dev
 
 
---> Display | Menu
+--> Dev | Menu
 -
 on menu_LexonDataViewArray
    put lexon_FetchDataFromHackMD ("HyQ8s2di_") into dData
@@ -54,14 +58,3 @@ on menu_LexonContractData
    --
    display_LexonContract lexBody
 end menu_LexonContractData
-
-
---> Dev | Menu
--
-on menu_Experiment displayView
-   put displayView
-end menu_Experiment
-
-
---> Deps
--

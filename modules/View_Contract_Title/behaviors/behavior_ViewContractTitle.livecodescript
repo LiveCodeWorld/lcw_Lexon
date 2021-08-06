@@ -8,6 +8,89 @@ type: behavior
 version: 0.1
 
 
+--> Working on
+-
+-- getProp dvCanSelect
+return false
+end dvCanSelect
+
+-- function CacheKeyForRow pRow
+put the dvData of me into sDataA
+return sDataA [pRow]["id"]
+end CacheKeyForRow
+
+private command _SetTitleLevel tLevel, textField
+   switch tLevel
+      case 1
+         set the textsize of textField to 24
+         set the visible of _ViewIcon() to true
+         break
+      case 2
+         set the textsize of textField to 18
+         set the visible of _ViewIcon() to false
+         break
+      default
+         -- small and not used
+         set the textsize of textField to 14
+         set the visible of _ViewIcon() to false
+   end switch
+end _SetTitleLevel
+
+
+--> Edit
+-
+on EditKey pKey
+   -- Call CreateFieldEditorForField and pass in the field to edit in the row control.
+   put _TextField() into pField
+   CreateFieldEditorForField pField, pKey
+end EditKey
+
+
+--> Icon
+-
+getprop icon_isVisible
+   put _ViewIcon() into vIcon
+   return the visible of vIcon
+end icon_isVisible
+
+setprop icon_isVisible isVisible
+   put _ViewIcon() into vIcon
+   set the visible of vIcon to isVisible
+end icon_isVisible
+
+
+--> Geometry | Props
+-
+getprop row_LeftMargin
+   put the dv_LeftMargin of me into leftM
+   if leftM is empty then
+      return 45
+   else
+      return leftM
+   end if
+end row_LeftMargin
+
+getprop icon_Height
+   return 18
+end icon_Height
+
+getprop icon_TopMargin
+   return 15
+end icon_TopMargin
+
+getprop icon_LeftMargin
+   return 12 
+end icon_LeftMargin
+
+getprop min_Height
+   return 21
+end min_Height
+
+getprop view_Margin
+   return 0,0,0,8
+end view_Margin
+
+
 --> Hilite
 -
 getprop row_TitleLevel
@@ -126,47 +209,6 @@ private command _SetTitle sTitle, tLevel
    _SetTitleLevel tLevel, textField
 end _SetTitle
 
-private command _SetTitleLevel tLevel, textField
-   switch tLevel
-      case 1
-         set the textsize of textField to 28
-         set the visible of _ViewIcon() to true
-         break
-      case 2
-         set the textsize of textField to 18
-         set the visible of _ViewIcon() to false
-         break
-      default
-         -- small and not used
-         set the textsize of textField to 14
-         set the visible of _ViewIcon() to false
-   end switch
-end _SetTitleLevel
-
-
---> Geometry | Props
--
-getprop row_LeftMargin
-   put the dv_LeftMargin of me into leftM
-   if leftM is empty then
-      return 45
-   else
-      return leftM
-   end if
-end row_LeftMargin
-
-getprop icon_Height
-   return 18
-end icon_Height
-
-getprop min_Height
-   return 21
-end min_Height
-
-getprop view_Margin
-   return 0,0,0,8
-end view_Margin
-
 
 --> Geometry
 -
@@ -201,15 +243,17 @@ end LayoutControl
 -
 private function _IconRect innerRect
    put the icon_Height of me into iconHeight
+   put the icon_TopMargin of me into mTop
+   put the icon_LeftMargin of me into mLeft
    --
    put item 1 of innerRect + iconHeight into item 3 of innerRect
    put item 2 of innerRect + iconHeight into item 4 of innerRect
    --
-   add 12 to item 1 of innerRect
-   add 12 to item 3 of innerRect
+   add mLeft to item 1 of innerRect
+   add mLeft to item 3 of innerRect
    
-   add 8 to item 2 of innerRect
-   add 8 to item 4 of innerRect
+   add mTop to item 2 of innerRect
+   add mTop to item 4 of innerRect
    --
    return innerRect
 end _IconRect

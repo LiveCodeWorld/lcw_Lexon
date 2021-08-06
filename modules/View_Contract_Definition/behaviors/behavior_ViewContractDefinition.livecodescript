@@ -8,6 +8,50 @@ type: behavior
 version: 0.1
 
 
+--> Working on
+-
+on keyDown theKey
+   if theKey = "." then
+      put _GetNewClause (theKey) into newClause
+      put _ConstructRowData (newClause) into rowData
+      --
+      FillInData rowData
+   else
+      LayoutControl
+   end if
+   pass keyDown
+end keyDown
+
+private function _GetNewClause theKey
+   put word 2 of the selectedchunk into cNum
+   put the text of _TextField() into someClause
+   put theKey before char cNum of someClause
+   return someClause
+end _GetNewClause
+
+private function _ConstructRowData newClause
+   clause_Deconstruct newClause, clauseTitle
+   --
+   put _ConstructClauseData (newClause) into newClauseData
+   -- put _ConstructDefData (newClause) into newDefData
+   --
+   put clauseTitle into rowData ["title"]
+   put newClause into rowData ["text"]
+   --
+   put newClauseData into rowData ["clauseData"]
+   -- put newDefData into rowData ["defData"]
+   --
+   return rowData
+end _ConstructRowData
+
+private function _ConstructClauseData utf8Clause
+   put empty into defLineData
+   put the contract_TitleArray of me into titleArray
+   put lexon_ConstructRowClauseData (utf8Clause, titleArray, defLineData) into clauseData
+   return clauseData
+end _ConstructClauseData
+
+
 --> DataView
 -
 setProp dvHilite [pHiliteColor] pBoolean
@@ -18,326 +62,131 @@ setProp dvHilite [pHiliteColor] pBoolean
    end if
 end dvHilite
 
+getprop definition_Phrase
+   put the dv_RowValue ["title"] of me into defTitle
+   return defTitle
+end definition_Phrase
 
---> Working on
+getprop wiki_Text
+   -- put the dv_RowValue ["title"] of me into pClauseTitle
+   put the dv_RowValue ["text"] of me into utf8Clause
+   --
+   put lexon_GetWikiClause (utf8Clause) into wikiClause
+   --
+   return wikiClause
+end wiki_Text
+
+
+--> Colours
 -
-setprop clause_Colour [clauseText] defColour
-   -- a slow ugly hack
-   put _TextField() into textField
-   put _GetDefColour() into defColour
-   put _GetMissingColour() into missingColour
-   put _GetClauseColour() into clauseColour
-   put _GetTermColour() into termColour
-   -- 
-   if clauseText is empty then put the clause_Text of me into clauseText
-   --
-   put the contract_ClauseTitles of me into clauseTitles
-   put the contract_DefTitles of me into defTitles
-   put the contract_TermTitles of me into termTitles
-   put lexon_GetClauseCapsArray (clauseText) into clauseArray
-   --
-   put item 2 of the extents of clauseArray into maxNumm
-   repeat with itemNum = maxNumm down to 1
-      put clauseArray [itemNum] into phraseArray
-      put phraseArray ["sWordNum"] into sWordNum
-      put phraseArray ["eWordNum"] into eWordNum
-      --
-      put phraseArray ["text"] into somePhrase
-      lexon_StripPunctuation somePhrase
-      --
-      set the textstyle of word sWordNum to eWordNum of textField to "link"
-      switch
-         case somePhrase is among the lines of clauseTitles
-            set the textcolor of word sWordNum to eWordNum of textField to clauseColour
-            break
-         case somePhrase is among the lines of termTitles
-            set the textcolor of word sWordNum to eWordNum of textField to termColour
-            break
-         case somePhrase is among the lines of defTitles
-            set the textcolor of word sWordNum to eWordNum of textField to defColour
-            break
-         default
-            set the textcolor of word sWordNum to eWordNum of textField to missingColour
-      end switch
-   end repeat
-   --
-   return clauseArray
-end clause_Colour
-
-setprop clause_CapsColour [clauseText] capsColour
-   put _TextField() into textField
-   --
-   if capsColour is not a color then return empty
-   if clauseText is empty then put the clause_Text of me into clauseText
-   --
-   put lexon_GetClauseCapsArray (clauseText) into clauseArray
-   --
-   put item 2 of the extents of clauseArray into maxNumm
-   repeat with itemNum = maxNumm down to 1
-      put clauseArray [itemNum] into phraseArray
-      put phraseArray ["sWordNum"] into sWordNum
-      put phraseArray ["eWordNum"] into eWordNum
-      put phraseArray ["text"] into somePhrase
-      --
-      -- set the textcolor of word sWordNum to eWordNum of textField to capsColour
-      set the textstyle of word sWordNum to eWordNum of textField to "link"
-   end repeat
-   --
-   return clauseArray
-end clause_CapsColour
-
-on FillInData pDataA, pRow
-   put pDataA ["title"] into clauseTitle
-   put pDataA ["text"] into utf8Clause
-   --
-   set the view_Text [clauseTitle] of me to utf8Clause
-end FillInData
-
-setprop view_Text [clauseTitle] utf8Clause
-   lock screen
-   put lexon_CleanClause (utf8Clause) into clauseText
-   put _GetClauseColour() into capsColour
-   put _GetDefColour() into defColour
-   --
-   set the text of _TextField() to clauseText
-   set the clause_Colour [clauseText] of me to defColour
-   _IndentLines clauseText
-   _FormatClauseTitle clauseTitle
-   --
-   LayoutControl
-   unlock screen
-end view_Text
-
 private function _GetMissingColour
    return "red"
 end _GetMissingColour
 
 private function _GetClauseColour
-   return "blue"
+   return "orange"
 end _GetClauseColour
 
-private function _GetDefColour
+private function _GetDefWordColour
    return "dark green"
-end _GetDefColour
+end _GetDefWordColour
+
+private function _GetDefLineColour
+   return "purple"
+end _GetDefLineColour
 
 private function _GetTermColour
-   return "brown"
+   return "blue"
 end _GetTermColour
 
-setprop text_Colour someColour
-   set the textcolor of word 1 to -1 of _TextField() to someColour
-end text_Colour
 
-setprop text_Style styleList
-   set the textstyle of word 1 to -1 of _TextField() to styleList
-end text_Style
-
-getprop clause_Text
-   if the dvControl of me is empty then
-      put the text of _TextField() into clauseText
-   else
-      put the dv_RowValue ["title"] of me into clauseTitle
-      put the dv_RowValue ["text"] of me into utf8Clause
-      --
-      if clauseTitle is not empty then
-         put word 1 to -1 of clauseTitle & CR before utf8Clause
-      end if
-      --
-      put lexon_CleanClause (utf8Clause) into clauseText
-   end if
-   --
-   set the itemdelimiter to ":"
-   if item 1 of clauseText = "CLAUSE" then
-      delete line 1 of clauseText
-   end if
-   --
-   return clauseText
-end clause_Text
-
-setprop clause_Text [sColour] clauseText
-   put the dvControl of me into dView
-   if dView is empty then
-      set the view_Text [sColour] of me to clauseText
-   else
-      set the dv_RowValue ["text"] of me to clauseText
-      put the result into dData
-      return dData
-   end if
-end clause_Text
-
-
---> Props
+--> DataView
 -
-getprop clause_Structure
-   put the clause_Text of the target into clauseText
-   --
-   put lexon_GetDefData (clauseText) into defData
-   put the result into fLine
-   put defData into sData ["def"]
-   --
-   put lexon_GetClauseCapsArray (clauseText) into clauseArray
-   put clauseArray into sData ["caps"]
-   --
-   return sData
-end clause_Structure
-
-getprop clause_DefData
-   put the clause_Text of the target into clauseText
-   put lexon_GetDefData (clauseText) into defData
-   return defData
-end clause_DefData
-
-
---> Props | Colour
--
-setprop clause_DefColour [capsColour] defColour   
-   put _TextField() into textField
-   put the clause_Text of me into clauseText
-   put lexon_GetDefData (clauseText) into defData
-   --
+on FillInData rowData, pRow
+   -- assumes rowData already formed with clauseData indexed
+   -- defData not required at this stage
+   
    lock screen
+   put rowData ["title"] into clauseTitle
+   put rowData ["text"] into utf8Clause
+   put rowData ["clauseData"] into clauseData
    --
-   set the textstyle of word 1 to -1 of textField to "plain"
+   put rowData ["defType"] into defType
+   set the icon_Type of me to defType
    --
-   if defColour is a color then
-      put item 2 of the extents of defData into maxNum
-      repeat with itemNum = maxNum down to 1
-         put defData [itemNum]["lineNum"] into lineNum
-         put defData [itemNum]["text"] into defLine
-         --
-         lexon_SetDefWordOffsets defLine, clauseText, sWordNum, eWordNum
-         put the result into fLine
-         --
-         if fLine = defLine then
-            -- set the textcolor of word sWordNum to eWordNum of textField to defColour
-            set the textcolor of word sWordNum of textField to defColour
-         else
-            throw "Error, defLine should match the phrase in utf8Clause"
-         end if
-      end repeat
-   end if
+   set the clause_Data [utf8Clause] of me to clauseData
+   _IndentLines utf8Clause
+   -- _FormatClauseTitle clauseTitle
+   set the lock_Text of me to true
    --
-   if capsColour is a color then
-      set the clause_Colour [clauseText] of textField to capsColour
-   end if
-   --
-   unlock screen
-end clause_DefColour
-
-setprop phrase_DefColour [capsColour] defColour
-   put _TextField() into textField
-   put the clause_Text of me into clauseText
-   put lexon_GetDefData (clauseText) into defData
-   --
-   lock screen
-   --
-   set the textstyle of word 1 to -1 of textField to "plain"
-   --
-   if defColour is a color then
-      put item 2 of the extents of defData into maxNum
-      repeat with itemNum = maxNum down to 1
-         put defData [itemNum]["lineNum"] into lineNum
-         put defData [itemNum]["text"] into defLine
-         --
-         lexon_SetDefWordOffsets defLine, clauseText, sWordNum, eWordNum
-         put the result into fLine
-         --
-         if fLine = defLine then
-            set the textcolor of word sWordNum to eWordNum of textField to defColour
-         else
-            throw "Error, defLine should match the phrase in utf8Clause"
-         end if
-      end repeat
-   end if
-   --
-   if capsColour is a color then
-      set the clause_CapsColour [clauseText] of textField to capsColour
-   end if
-   --
-   unlock screen
-end phrase_DefColour
-
-
---> Props
--
-getprop clause_Titles
-   put the dv_RowData of me into clauseData
-   --
-   put clause_ListUniqueTitles (clauseData) into uniqueTitles
-   return uniqueTitles
-end clause_Titles
-
-getprop wiki_Text
-   put the dv_RowValue ["title"] of me into pClauseTitle
-   put the dv_RowValue ["text"] of me into utf8Clause
-   --
-   put lexon_GetWikiClause (utf8Clause, pClauseTitle) into wikiClause
-   --
-   return wikiClause
-end wiki_Text
-
-setprop indent_Lines
-   put the clause_Text of me into clauseText
-   _IndentLines clauseText, 24
-end indent_Lines
-
-
---> Private
--
-
-
---> Events
--
-on mouseDown
-   put _ViewIcon() into vIcon
-   put the short id of vIcon into vID
-   if the short id of the target = vID then
-      set the highlight of vIcon to true
-      --
-      menu_PullDown "Global | Contract | Clause | Menu", "", vIcon
-      -- set the highlight of vIcon to false
-   else
-      pass mouseDown
-   end if
-end mouseDown
-
-on mouseLeave
-   set the highlight of _ViewIcon() to false
-   pass mouseLeave
-end mouseLeave
-
-on mouseUp
-   set the highlight of _ViewIcon() to false
-   pass mouseUp
-end mouseUp
-
-on resizeControl
    LayoutControl
-end resizeControl
+   unlock screen
+end FillInData
 
-
---> Private
--
-private command _FormatClauseTitle pTitle
-   put _TextFieldID() into fldID
-   --
-   if pTitle is not empty then
-      put pTitle & CR before line 1 of fld id fldID of me
-      set the textStyle of line 1 of fld id fldID to "bold"
-      set the spacebelow of line 1 of fld id fldID to 2
-      set the textcolor of line 1 of fld id fldID to empty
+getprop clause_Data [pClauseText]
+   if exists (the dvControl of me) then
+      put the dv_RowData of me into rowData
+      put rowData ["clauseData"] into clauseData
+   else
+      put _ConstructClauseData (pClauseText, defLineData) into clauseData
    end if
-end _FormatClauseTitle
+   return clauseData
+end clause_Data
+
+setprop clause_Data [pClauseText] clauseData
+   lock screen
+   --
+   put _TextField() into textField
+   put _GetDefWordColour() into defWordColour
+   put _GetDefLineColour() into defLineColour
+   put _GetMissingColour() into missingColour
+   put _GetClauseColour() into clauseColour
+   put _GetTermColour() into termColour
+   --
+   if pClauseText is not empty then
+      set the plain_Text of me to pClauseText
+   end if
+   
+   put item 2 of the extents of clauseData into maxNum
+   repeat with itemNum = maxNum down to 1 -- go backwards just in case
+      put clauseData [itemNum] into phraseArray
+      put phraseArray ["sCharNum"] into sCharNum
+      put phraseArray ["eCharNum"] into eCharNum
+      put phraseArray ["text"] into somePhrase
+      put phraseArray ["linkType"] into linkType
+      --  lexon_StripPunctuation somePhrase
+      --
+      set the textstyle of char sCharNum to eCharNum of textField to "link"
+      switch linkType
+         case "clause"
+            set the textcolor of char sCharNum to eCharNum of textField to clauseColour
+            break
+         case "term"
+            set the textcolor of char sCharNum to eCharNum of textField to termColour
+            break
+         case "def"
+            -- definition terms linking to definition sections
+            set the textcolor of char sCharNum to eCharNum of textField to defWordColour
+            break
+         case "unknown"
+            set the textcolor of char sCharNum to eCharNum of textField to missingColour
+            break
+         default
+            -- def line
+            -- definition sections
+            set the textcolor of char sCharNum to eCharNum of textField to defLineColour
+      end switch
+   end repeat
+   unlock screen
+end clause_Data
 
 private command _IndentLines clauseText, pIndentNum
-   -- a bit ugly as if line wraps the wrapped part is not indented
-   -- possibly use listIndent
    put _TextFieldID() into fldID
    --
    put 1 into indentNum
-   repeat with lineNum = 1 to the number of lines of clauseText
-      get char 1 of line lineNum of clauseText
-      if _IsLower (it) then
+   repeat with lineNum = 2 to the number of lines of clauseText
+      get char 1 of token 1 of line lineNum of clauseText
+      if text_IsUpper (it) is false then
          -- set the firstIndent of line lineNum of fld id fldID to empty
          set the liststyle of line lineNum of fld id fldID to "skip"
          set the listIndent of line lineNum of fld id fldID to 18
@@ -349,12 +198,168 @@ private command _IndentLines clauseText, pIndentNum
    end repeat
 end _IndentLines
 
-private function _IsLower testChar
-   --  if text_StartsWithCaps (testChar) then
-   put charToNum (testChar) into sCharNum
-   put sCharNum >= 97 AND sCharNum <= 122 into isLower
-   return isLower
-end _IsLower
+private command _FormatClauseTitle pTitle
+   switch pTitle
+      case empty
+      case "_Untitled"
+         break
+      default
+         put _TextFieldID() into fldID
+         put pTitle & CR before line 1 of fld id fldID of me
+         set the textStyle of line 1 of fld id fldID to "plain,bold"
+         set the spacebelow of line 1 of fld id fldID to 2
+         set the textcolor of line 1 of fld id fldID to empty
+   end switch
+end _FormatClauseTitle
+
+
+--> Icon
+-
+getprop icon_DetectType
+   put the plain_Text of me into defLine
+   put lexon_DetectDefinitionType (defLine) into defType
+   return defType
+end icon_DetectType
+
+getprop icon_Type
+   get the iconPresetName of _ViewIcon() 
+   --
+   switch it
+      case "building"
+      case "html5"
+         return "number"
+      case "gbp"
+      case "eur"
+      case "usd"
+         return "amount"
+      case "user"
+         return "person"
+      case "hospital"
+         return "entity"
+      case "file text alt"
+         return "text"
+         -- return "definition"
+      case "check"
+      case "adjust"
+         return "boolean"
+      case "superscript"
+         return "percentage"
+      case "btc"
+         return "blockchain"
+      case "time"
+         return "time"
+      case "money"
+         return "account"
+      default
+         return it
+   end switch
+end icon_Type
+
+setprop icon_Type iconType
+   switch iconType
+      case "account"
+         put "money" into iName
+         break
+      case "time"
+         put "time" into iName
+         break
+      case "amount"
+         put "gbp" into iName
+         -- put "usd" into iName
+         put "eur" into iName
+         break
+      case "number"
+         -- put "building" into iName
+         put "html5" into iName
+         break
+      case "person"
+         put "user" into iName
+         break
+      case "entity"
+         put "hospital" into iName
+         break
+         -- case "definition"
+      case "text"
+         put "file text alt" into iName
+         break
+      case "boolean"
+         -- put "check" into iName
+         put "adjust" into iName
+         break
+      case "percentage"
+         put "superscript" into iName
+         break
+      case "blockchain"
+         put "btc" into iName
+         break
+      default -- "definition"
+         put "file text alt" into iName
+   end switch
+   --
+   set the iconPresetName of _ViewIcon() to iName
+   return iconType
+end icon_Type
+
+getprop icon_Types
+   -- return "amount,number,person,entity,text,boolean"
+   put the behavior of me into bObject
+   get the hkey_CaseConditions ["S icon_Type"] of bObject
+   return it
+end icon_Types
+
+getprop icon_isVisible
+   put _ViewIcon() into vIcon
+   return the visible of vIcon
+end icon_isVisible
+
+setprop icon_isVisible isVisible
+   put _ViewIcon() into vIcon
+   set the visible of vIcon to isVisible
+end icon_isVisible
+
+
+--> Geometry | Props
+-
+getprop row_LeftMargin
+   put the dv_LeftMargin of me into leftM
+   if leftM is empty then
+      return 45
+   else
+      return leftM
+   end if
+end row_LeftMargin
+
+getprop icon_Height
+   return 14
+end icon_Height
+
+getprop icon_TopMargin
+   return 6
+end icon_TopMargin
+
+getprop icon_LeftMargin
+   return 14
+end icon_LeftMargin
+
+getprop view_Margin
+   return 0,0,0,0
+end view_Margin
+
+private function _IconRect innerRect
+   put the icon_TopMargin of me into mTop
+   put the icon_LeftMargin of me into mLeft
+   put the icon_Height of me into iconHeight
+   --
+   put item 1 of innerRect + iconHeight into item 3 of innerRect
+   put item 2 of innerRect + iconHeight into item 4 of innerRect
+   --
+   add mLeft to item 1 of innerRect
+   add mTop to item 2 of innerRect
+   add mLeft to item 3 of innerRect
+   add mTop to item 4 of innerRect
+   --
+   return innerRect
+end _IconRect
 
 
 --> Geometry | Props
@@ -402,12 +407,6 @@ on LayoutControl pControlRect
    put the dv_IconsShowing of me is not false into iconsShowing
    --
    _SetInnerRect pControlRect, innerRect, bMargin
-   /*
-   put pControlRect into innerRect
-   put the view_Margin of me into viewMargin
-   rect_SubtractMargins innerRect, viewMargin
-   put item 4 of the result into bMargin
-   */
    --
    put _TextRect (innerRect, true) into fieldRect
    --
@@ -474,8 +473,148 @@ private function _TextRect innerRect, pUseFormatted
 end _TextRect
 
 
+--> Props
+-
+setprop clause_Text [clauseTitle] clauseText
+   put the dv_RowData of me into rowData
+   FillInData rowData
+end clause_Text
+
+getprop clause_DefData
+   -- put the plain_Text of me into clauseText
+   put the dv_RowValue ["text"] of me into clauseText
+   --
+   put lexon_GetDefLineData (clauseText) into defData
+   return defData
+end clause_DefData
+
+setprop indent_Lines
+   -- put the plain_Text of me into clauseText
+   put the dv_RowValue ["text"] of me into clauseText
+   --
+   _IndentLines clauseText, 24
+end indent_Lines
+
+getprop plain_Text clauseText
+   put the text of _TextField() into clauseText
+   return clauseText
+end plain_Text
+
+setprop plain_Text clauseText
+   lock screen
+   set the text of _TextField() to clauseText
+   LayoutControl
+   unlock screen
+end plain_Text
+
+getprop lock_Text
+   return the locktext of _TextField() is true
+end lock_Text
+
+setprop lock_Text sBoolean
+   put _TextField() into textField
+   --
+   set the locktext of textField to sBoolean is true
+   set the autohilite of textField to sBoolean is false
+end lock_Text
+
+on EditKey pKey
+   -- Call CreateFieldEditorForField and pass in the field to edit in the row control.
+   put _TextField() into textField
+   CreateFieldEditorForField textField, pKey
+end EditKey
+
+on CloseFieldEditor tempField, rowNum, pKey, whichMessage
+   put the dvData of me into dData
+   put dData [rowNum] into rowData
+   --
+   put the text of tempField into newClause
+   put clause_GetDataFromText (newClause, rowData) into rowData
+   --
+   -- set the dvData of me to dData
+   set the dvRowData [rowNum] of me to rowData
+   --
+   put rowData ["id"] into pId
+   RefreshRowOfId pId
+end CloseFieldEditor
+
+
+--> DataView
+-
+setProp dvHilite [pHiliteColor] pBoolean
+   if pBoolean then
+      set the backgroundcolor of graphic "Background" of me to "yellow"
+   else
+      set the backgroundcolor of graphic "Background" of me to pHiliteColor
+   end if
+end dvHilite
+
+setprop text_Colour someColour
+   set the textcolor of word 1 to -1 of _TextField() to someColour
+end text_Colour
+
+setprop text_Style styleList
+   set the textstyle of word 1 to -1 of _TextField() to styleList
+end text_Style
+
+
+--> Props
+-
+getprop clause_Titles
+   put the dv_RowData of me into clauseData
+   --
+   put clause_ListUniqueTitles (clauseData) into uniqueTitles
+   return uniqueTitles
+end clause_Titles
+
+
+--> Events
+-
+on returnInField
+   put _TextFieldID()  into fldID
+   put word 2 of the selectedchunk into cNum
+   put the text of field id fldID of me into newClause
+   put CR before char cNum of newClause
+   --
+   set the text of field id fldID of me to newClause
+   LayoutControl
+   select after char cNum of field id fldID of me
+end returnInField
+
+on mouseDown
+   put _ViewIcon() into vIcon
+   put the short id of vIcon into vID
+   if the short id of the target = vID then
+      set the highlight of vIcon to true
+      --
+      menu_PullDown "Global | Contract | Clause | Menu", "", vIcon
+      -- set the highlight of vIcon to false
+   else
+      pass mouseDown
+   end if
+end mouseDown
+
+on mouseLeave
+   set the highlight of _ViewIcon() to false
+   pass mouseLeave
+end mouseLeave
+
+on mouseUp
+   set the highlight of _ViewIcon() to false
+   pass mouseUp
+end mouseUp
+
+on resizeControl
+   LayoutControl
+end resizeControl
+
+
 --> Objects
 -
+getprop icon_View
+   return _ViewIcon()
+end icon_View
+
 getProp dvRowControl
    return the long id of me
 end dvRowControl
@@ -498,5 +637,4 @@ end _ViewIcon
 private function _GraphicObject
    return the long id of graphic "Background" of me
 end _GraphicObject
-
 

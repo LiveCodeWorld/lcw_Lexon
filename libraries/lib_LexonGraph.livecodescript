@@ -1,7 +1,7 @@
 ﻿script "lib_LexonGraph"
 --> MetaData
 -
-copyright: Anonymous
+copyright: David Bovill
 license: GPLv3
 name: lib_LexonGraph
 type: library
@@ -12,62 +12,151 @@ version: 0.1
 
 --> Working on
 -
-function lexon_GetClauseLinkArray iData
-   
-end lexon_GetClauseLinkArray
-
-
---> Graph
--
-command graph_SimpleLinkArray linkArray, pGraphName, pFile
-   -- put dot_FromLinkArray (linkArray) into dotText
-   put linkArray_DotNodeLinks (linkArray, empty) into nodeSection
-   put dot_Construct (nodeSection, pGraphName) into dotText
+command display_LexonContractGraph dData, pShortFile, pGraphStyle, pNotTheseDefs
+   put "Lexon" into graphName
    --
-   display_Text dotText
-   dot_CreateGraph dotText, pFile
+   put lexon_GetContractLinkArray (dData, pNotTheseDefs) into linkArray
+   delete variable linkArray ["GENERAL: definitions."]
+   --
+   put the project_AssetFolder of stack "lcw_Lexon" into projectAssetFolder
+   put projectAssetFolder & pShortFile into dotFile
+   --
+   put lexon_ConstructGroupStyleArray (dData) into dotGroupStyleArray
+   put dot_ConstructDefSection (dotGroupStyleArray, linkArray) into defSection
+   put empty into defSection
+   --
+   put false into concentrate
+   put "oval" into defaultShape
+   --
+   put linkArray_ConstructDotSimple (linkArray, pGraphStyle, "lightblue",  concentrate, defaultShape, defSection, graphName) into dotText
+   -- display_Text dotText, graphName
+   --
+   dot_CreateGraph dotText, dotFile, pGraphStyle
    put the result into svgFile
+   display_SVG svgFile, graphName
    --
-   display_SVG svgFile
-end graph_SimpleLinkArray
+   return svgFile
+end display_LexonContractGraph
+
+function lexon_ConstructGroupStyleArray dData
+   local dotGroupStyleArray, nodeUrl
+   
+   -- put lexon_ListClauseTitles (dData) into clauseTitles
+   repeat with rowNum = 1 to item 2 of the extents of dData 
+      put dData [rowNum] into itemArray
+      if itemArray ["@style"] = "clause" then
+         put itemArray ["title"] into utf8Title
+         if utf8Title is empty then next repeat
+         --
+         put lexon_GetRowTitle (rowNum, dData) into longTitle
+         put lexon_GetClauseTitle (longTitle) into clauseTitle
+         --
+         put kwote (clauseTitle) & CR after clauseTitles
+      end if
+   end repeat
+   delete char -1 of clauseTitles
+   --
+   graph_AddToGroupStyleArray dotGroupStyleArray, "Clause", clauseTitles, "black", "yellow", nodeUrl
+   -- graph_SetNodeLabel dotGroupStyleArray, empty, "http://google.com"
+   --
+   return dotGroupStyleArray
+end lexon_ConstructGroupStyleArray
 
 
 --> Lexon | Graph
 -
-function lexon_ConstructContractLinkArray iData
-   repeat for each key itemNum in iData
-      put iData [itemNum]["title"] into pTitle
-      -- put _GetSlug (pTitle) into pSlug
-      put _Quote (pTitle) into pSlug
-      --
-      put iData [itemNum]["links"] into linksData
-      repeat for each key linkNum in linksData
-         put linksData [linkNum]["text"] into cTitle
-         -- put _GetSlug (cTitle) into cSlug
-         put _Quote (cTitle) into cSlug
-         --
-         put cTitle into linkArray [pSlug][cSlug]
-      end repeat
+function lexon_GetContractLinkArray dData, pNotTheseDefs
+   local linkArray
+   repeat with rowNum = 1 to item 2 of the extents of dData
+      put dData [rowNum]["@style"] into itemStyle
+      switch itemStyle
+         case "title"
+            next repeat
+         default
+            lexon_AddLinkArray linkArray, rowNum, dData, pNotTheseDefs
+      end switch
    end repeat
-   return iData
-end lexon_ConstructContractLinkArray
-
-function lexon_GetContractLinkArray dData
-   repeat with itemNum = 1 to item 2 of the extents of dData
-      put dData [itemNum] into clauseData
-      --
-      put clauseData ["title"] into utf8Title
-      put lexon_GetClauseTitle (utf8Title) into cTitle
-      --
-      if cTitle is not empty then
-         put clause_GetUniqueTitleData (clauseData) into titleData
-         put titleData into cLinkArray ["linkArray"][cTitle]
-         put itemNum into cLinkArray ["meta"][cTitle]["itemNum"]
-         put titleData into cLinkArray ["meta"][cTitle]["children"]
-      end if
-   end repeat
-   return cLinkArray
+   return linkArray
 end lexon_GetContractLinkArray
+
+command lexon_AddLinkArray @linkArray, rowNum, dData, pNotTheseDefs
+   put lexon_GetPrettyRowTitle (rowNum, dData) into fromTitle
+   --
+   put dData [rowNum]["clauseData"] into clauseData
+   repeat with itemNum = 1 to item 2 of the extents of clauseData
+      put clauseData [itemNum]["text"] into toTitle
+      --
+      if toTitle = fromTitle then next repeat -- strip self-references
+      --
+      put clauseData [itemNum]["linkType"] into linkType
+      if linkType is among the items of pNotTheseDefs then next repeat
+      --
+      put linkType into linkArray [fromTitle][toTitle]["linkType"]
+   end repeat
+end lexon_AddLinkArray
+
+function lexon_GetRowTitle rowNum, dData
+   put dData [rowNum]["title"] into rowTitle
+   --
+   if rowTitle = "_Untitled" then
+      put row_GetDataAbove (rowNum, dData, 2) into sectionTitleData
+      put row_GetDataAbove (rowNum, dData, 1) into termTitleData
+      --
+      put sectionTitleData ["text"] into sectionAboveTitle
+      if sectionAboveTitle = "RECITAL." then return "RECITAL"
+      
+      put termTitleData ["text"] into termAboveTitle
+      switch
+         case sectionAboveTitle = termAboveTitle
+            delete word -1 of termAboveTitle
+            put "RECITAL:" && tolower (termAboveTitle) into rowTitle
+            break
+         default
+            delete word -1 of termAboveTitle
+            if termAboveTitle is empty then return "GENERAL: definitions"
+            --
+            put termAboveTitle & ":" && tolower (sectionAboveTitle) into rowTitle
+      end switch
+   end if
+   --
+   return rowTitle
+end lexon_GetRowTitle
+
+
+--> Lexon | Graph | Utils
+-
+function lexon_GetPrettyRowTitle rowNum, dData
+   put lexon_GetRowTitle (rowNum, dData) into longTitle
+   put lexon_GetClauseTitle (longTitle) into fromTitle
+   return fromTitle
+end lexon_GetPrettyRowTitle
+
+function lexon_GetLinkArray rowNum, dData, pNotTheseDefs
+   local linkArray
+   lexon_AddLinkArray linkArray, rowNum, dData, pNotTheseDefs
+   return linkArray
+end lexon_GetLinkArray
+
+
+--> Experiments
+-
+-- function lexon_ConstructContractLinkArray dData
+repeat for each key rowNum in dData
+   put dData [rowNum]["title"] into pTitle
+   -- put _GetSlug (pTitle) into pSlug
+   put _Quote (pTitle) into pSlug
+   --
+   put iData [itemNum]["links"] into linksData
+   repeat for each key linkNum in linksData
+      put linksData [linkNum]["text"] into cTitle
+      -- put _GetSlug (cTitle) into cSlug
+      put _Quote (cTitle) into cSlug
+      --
+      put cTitle into linkArray [pSlug][cSlug]
+   end repeat
+end repeat
+return iData
+end lexon_ConstructContractLinkArray
 
 
 --> Private
@@ -99,3 +188,4 @@ private function _GetSlug sText
    put fedwiki_ConstructSlug (sText) into cSlug
    return cSlug
 end _GetSlug
+
