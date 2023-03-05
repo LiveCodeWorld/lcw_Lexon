@@ -80,27 +80,6 @@ function lexon_GetWikiClause utf8Clause, pClauseTitle, pLevel
    return wikiClause
 end lexon_GetWikiClause
 
-private function _ConstructWikiClause someClause, clauseArray
-   put someClause into wikiClause
-   put item 2 of the extents of clauseArray into maxNumm
-   repeat with itemNum = maxNumm down to 1
-      put clauseArray [itemNum] into phraseArray
-      put phraseArray ["sWordNum"] into sWordNum
-      put phraseArray ["eWordNum"] into eWordNum
-      put phraseArray ["text"] into somePhrase
-      --
-      if char 1 of somePhrase is quote then
-         put "[[" after char 1 of somePhrase
-         put "]]" before char -1 of somePhrase
-      else
-         put "[[" before somePhrase
-         put "]]" after somePhrase
-      end if
-      put somePhrase into word sWordNum to eWordNum of wikiClause
-   end repeat
-   return wikiClause
-end _ConstructWikiClause
-
 
 --> Lexon
 -
@@ -146,6 +125,27 @@ end text_CleanQuotes
 
 --> Private
 -
+private function _ConstructWikiClause someClause, clauseArray
+   put someClause into wikiClause
+   put item 2 of the extents of clauseArray into maxNumm
+   repeat with itemNum = maxNumm down to 1
+      put clauseArray [itemNum] into phraseArray
+      put phraseArray ["sWordNum"] into sWordNum
+      put phraseArray ["eWordNum"] into eWordNum
+      put phraseArray ["text"] into somePhrase
+      --
+      if char 1 of somePhrase is quote then
+         put "[[" after char 1 of somePhrase
+         put "]]" before char -1 of somePhrase
+      else
+         put "[[" before somePhrase
+         put "]]" after somePhrase
+      end if
+      put somePhrase into word sWordNum to eWordNum of wikiClause
+   end repeat
+   return wikiClause
+end _ConstructWikiClause
+
 private function utf8_Decode utf8Text
    -- put unidecode (uniencode (utf8Text, "UTF8")) into utf8Text
    put uniencode (utf8Text,"UTF8") into someU16

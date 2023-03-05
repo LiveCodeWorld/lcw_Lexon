@@ -28,7 +28,7 @@ command display_LexonContractGraph dData, pShortFile, pGraphStyle, pNotTheseDefs
    put false into concentrate
    put "oval" into defaultShape
    --
-   put linkArray_ConstructDotSimple (linkArray, pGraphStyle, "lightblue",  concentrate, defaultShape, defSection, graphName) into dotText
+   put dot_FromLinkArray (linkArray, pGraphStyle, "lightblue",  concentrate, defaultShape, defSection, graphName) into dotText
    -- display_Text dotText, graphName
    --
    dot_CreateGraph dotText, dotFile, pGraphStyle
