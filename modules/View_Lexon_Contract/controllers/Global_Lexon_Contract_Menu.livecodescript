@@ -122,7 +122,7 @@ on menu_DisplayBrowser
    display_Browser someURL, sRect
 end menu_DisplayBrowser
 
-on _
+private on _
 end _
 
 on menu_CleanContract dView
@@ -140,8 +140,8 @@ on menu_DisplayDefinitions contractView
    display_LexonDefinitions dData
 end menu_DisplayDefinitions
 
-on _
-end _
+private on __
+end __
 
 on menu_GraphContract dView
    put the dvData of dView into dData
@@ -160,15 +160,15 @@ on menu_DisplayContractLinkArray dView
    display_Data cLinkArray, "Clause LinkArray", "Lexon Contract"
 end menu_DisplayContractLinkArray
 
-on _
-end _
+private on ___
+end ___
 
 on menu_RenameUntitled dView
    set the selected_Clause of dView to clauseTitle
 end menu_RenameUntitled
 
-on _
-end _
+private on ___
+end ___
 
 on menu_HiliteClause dView, clauseTitle
    set the selected_Clause of dView to clauseTitle
@@ -186,8 +186,8 @@ on submenu_Behaviors
    return "Global | DataView | Behaviors | Menu"
 end submenu_Behaviors
 
-on _
-end _
+private on ____
+end ____
 
 on menu_ShowLinks rowView, someBoolean
    put the stack_Name of rowView into stackName
@@ -210,8 +210,8 @@ on menu_CanDrag dView
    set the dv_CanDrag of dView to cantDrag
 end menu_CanDrag
 
-on _
-end _
+private on _____
+end _____
 
 on menu_RefreshDataView dView
    send "ResetView" to dView in 2 ticks
