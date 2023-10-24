@@ -37,7 +37,7 @@ end lexon_ListDefTypes
 
 function lexon_FilterDefinitions dData
    local fData
-   -- put dv_FilterByStyle (dData, "definition") into fData
+   put dv_FilterByStyle (dData, "definition") into fData
    
    -- dv_AddMarkdownTitle fData, "DEFINITIONS.", 2
    lexon_AddTitle fData, "DEFINITIONS.", 1

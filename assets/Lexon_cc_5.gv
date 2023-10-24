@@ -1,0 +1,14 @@
+digraph Lexon_cc_5 {
+	graph [bgcolor=lightblue,
+		concentrate=false,
+		overlap=false,
+		splines=true
+	];
+	node [fillcolor=white,
+		shape=oval,
+		style=filled
+	];
+	"RECITAL: application" -> "Initial Capital Offer";
+	"RECITAL: application" -> Applicant;
+	"RECITAL: application" -> Limit;
+}

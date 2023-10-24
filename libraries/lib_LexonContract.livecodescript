@@ -39,6 +39,22 @@ function row_GetDataAbove rowNum, dData, pLevel
    return empty
 end row_GetDataAbove
 
+command clause_BlankFound @someClause, clauseData
+   repeat for each key itemType in clauseData
+      put clauseData [itemType] into itemData
+      repeat with itemNum = 1 to item 2 of the extents of itemData
+         put itemData [itemNum]["sWordNum"] into sWordNum
+         put itemData [itemNum]["eWordNum"] into eWordNum
+         --
+         get token sWordNum to eWordNum of someClause
+         put _GetFakeWords (sWordNum, eWordNum, someClause) into fakeWords
+         --
+         put fakeWords into token sWordNum to eWordNum of someClause --- same number of words but not chars
+      end repeat
+   end repeat
+end clause_BlankFound
+
+
 --> Lexon | TitleArray
 -
 function lexon_GetContractTitleArray dData
@@ -113,20 +129,65 @@ function lexon_GetUnknownCapsArray someClause, clauseData
    return unknownCapsArray
 end lexon_GetUnknownCapsArray
 
-command clause_BlankFound @someClause, clauseData
-   repeat for each key itemType in clauseData
-      put clauseData [itemType] into itemData
-      repeat with itemNum = 1 to item 2 of the extents of itemData
-         put itemData [itemNum]["sWordNum"] into sWordNum
-         put itemData [itemNum]["eWordNum"] into eWordNum
-         --
-         get token sWordNum to eWordNum of someClause
-         put _GetFakeWords (sWordNum, eWordNum, someClause) into fakeWords
-         --
-         put fakeWords into token sWordNum to eWordNum of someClause --- same number of words but not chars
-      end repeat
+
+--> Lexon | Contract
+-
+function lexon_FindDef somePhrase, dData
+   put lexon_GetContractDefArray (dData) into defArray
+   put defArray [somePhrase]["rowNum"] into rowNum
+   if rowNum is empty then
+      return 0
+   else
+      return rowNum
+   end if
+end lexon_FindDef
+
+function lexon_FindClause clauseTitle, dData
+   put "CLAUSE:" && clauseTitle into findTitle
+   repeat with rowNum = 1 to item 2 of the extents of dData
+      put dData [rowNum]["@style"] into itemStyle
+      if itemStyle = "clause" then
+         put dData [rowNum]["title"] into testTitle
+         if testTitle = findTitle then
+            return rowNum
+         end if
+      end if
    end repeat
-end clause_BlankFound
+   return 0
+end lexon_FindClause
+   
+function lexon_FindTerm termTitle, dData
+   put word 1 to -1 of termTitle && "TERMS." into testTitle
+   --
+   repeat with rowNum = 1 to item 2 of the extents of dData
+      put dData [rowNum]["@style"] into itemStyle
+      if itemStyle = "title" then
+         put dData [rowNum]["text"] into titleText
+         if testTitle = titleText then
+            return rowNum
+         end if
+      end if
+   end repeat
+   return 0
+end lexon_FindTerm
+
+command lexon_AddToTitleArray @titleArray, someTitles, linkType
+   repeat for each line someTitle in someTitles
+      put the number of words of someTitle into wordNum
+      put linkType into titleArray [wordNum][someTitle]["linkType"]
+   end repeat
+end lexon_AddToTitleArray
+
+
+--> Private
+-
+private command _CreateClauseLines @someClause
+   -- this should not change the wordNum
+   replace "." with CR in someClause
+   replace "," with CR in someClause
+   replace ";" with CR in someClause
+   replace ":" with CR in someClause
+end _CreateClauseLines
 
 private function _GetFakeWords sWordNum, eWordNum, someClause
    put token sWordNum to eWordNum of someClause into somePhrase
@@ -208,56 +269,7 @@ private function _FindLastLineWord startLineWordNum, clauseLine
 end _FindLastLineWord
 
 
---> Lexon | Contract
--
-function lexon_FindDef somePhrase, dData
-   put lexon_GetContractDefArray (dData) into defArray
-   put defArray [somePhrase]["rowNum"] into rowNum
-   if rowNum is empty then
-      return 0
-   else
-      return rowNum
-   end if
-end lexon_FindDef
-
-function lexon_FindClause clauseTitle, dData
-   put "CLAUSE:" && clauseTitle into findTitle
-   repeat with rowNum = 1 to item 2 of the extents of dData
-      put dData [rowNum]["@style"] into itemStyle
-      if itemStyle = "clause" then
-         put dData [rowNum]["title"] into testTitle
-         if testTitle = findTitle then
-            return rowNum
-         end if
-      end if
-   end repeat
-   return 0
-end lexon_FindClause
-   
-function lexon_FindTerm termTitle, dData
-   put word 1 to -1 of termTitle && "TERMS." into testTitle
-   --
-   repeat with rowNum = 1 to item 2 of the extents of dData
-      put dData [rowNum]["@style"] into itemStyle
-      if itemStyle = "title" then
-         put dData [rowNum]["text"] into titleText
-         if testTitle = titleText then
-            return rowNum
-         end if
-      end if
-   end repeat
-   return 0
-end lexon_FindTerm
-
-command lexon_AddToTitleArray @titleArray, someTitles, linkType
-   repeat for each line someTitle in someTitles
-      put the number of words of someTitle into wordNum
-      put linkType into titleArray [wordNum][someTitle]["linkType"]
-   end repeat
-end lexon_AddToTitleArray
-
-
---> Text
+--> Deps
 -
 command text_StripQuotedArray @someText
    local offsetArray

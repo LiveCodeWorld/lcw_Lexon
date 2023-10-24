@@ -1,0 +1,17 @@
+digraph Lexon_cc_0 {
+	graph [bgcolor=lightblue,
+		concentrate=false,
+		overlap=false,
+		splines=true
+	];
+	node [fillcolor=white,
+		shape=oval,
+		style=filled
+	];
+	Leave -> "Pay Out and Terminate";
+	"Wind Down" -> "Pay Out and Terminate";
+	"Wind Down" -> Cancel;
+	Dissolution -> "Wind Down";
+	Dissolution -> Depleted;
+	Dissolution -> Uncontrolled;
+}

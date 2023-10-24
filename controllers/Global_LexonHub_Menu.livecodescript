@@ -36,7 +36,7 @@ end menu_OpenHub
 
 on menu_FetchContract stackObject
    put "HyQ8s2di_" into hackmdID
-   put lexon_FetchContract (hackmdID, false) into lexBody
+   put hackMD_FetchLexonContract (hackmdID, false) into lexBody
    -- put textDecode (lexBody, "utf8") into lexBody
    put lexon_ConstructTermIndexData (lexBody) into termData
    put lexon_ConstructDataViewArray (termData) into dData

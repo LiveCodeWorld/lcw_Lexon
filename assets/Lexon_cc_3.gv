@@ -1,0 +1,24 @@
+digraph Lexon_cc_3 {
+	graph [bgcolor=lightblue,
+		concentrate=false,
+		overlap=false,
+		splines=true
+	];
+	node [fillcolor=white,
+		shape=oval,
+		style=filled
+	];
+	"End of Trading" -> "Distribute Gains";
+	"End of Trading" -> "Log Results";
+	"End of Trading" -> Payment;
+	"Distribute Gains" -> "Draft Fee";
+	"Distribute Gains" -> "Support Share";
+	"Distribute Gains" -> "Maintenance Share";
+	"Distribute Gains" -> "Reserve Share";
+	"Distribute Gains" -> "Trader Fee";
+	"Log Results" -> Payment;
+	Payment -> "End of Trading";
+	"Top Up" -> Payment;
+	"Trader Ends Trading" -> "End of Trading";
+	"Trader Ends Trading" -> Payment;
+}

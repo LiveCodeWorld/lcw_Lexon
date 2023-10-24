@@ -1,0 +1,4528 @@
+{
+  "name": "Lexon",
+  "directed": true,
+  "strict": false,
+  "_draw_": 
+  [
+    {
+      "op": "c",
+      "grad": "none",
+      "color": "#fffffe00"
+    },
+    {
+      "op": "C",
+      "grad": "none",
+      "color": "#add8e6"
+    },
+    {
+      "op": "P",
+      "points": [[0.000,0.000],[0.000,324.000],[4528.580,324.000],[4528.580,0.000]]
+    }
+  ],
+  "bb": "0,0,4528.6,324",
+  "bgcolor": "lightblue",
+  "concentrate": "false",
+  "directed": "true",
+  "overlap": "false",
+  "splines": "true",
+  "xdotversion": "1.7",
+  "_subgraph_cnt": 0,
+  "objects": [
+    {
+      "_gvid": 0,
+      "name": "Top Up",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [149.150,306.000,39.580,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [149.150,300.950],
+          "align": "c",
+          "width": 42.000,
+          "text": "Top Up"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "149.15,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.0994"
+    },
+    {
+      "_gvid": 1,
+      "name": "Amended Bylaws Proposal",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [434.150,234.000,112.260,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [434.150,228.950],
+          "align": "c",
+          "width": 148.500,
+          "text": "Amended Bylaws Proposal"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "434.15,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.1182"
+    },
+    {
+      "_gvid": 2,
+      "name": "End of Trading",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [258.150,162.000,67.220,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [258.150,156.950],
+          "align": "c",
+          "width": 82.500,
+          "text": "End of Trading"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "258.15,162",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.8672"
+    },
+    {
+      "_gvid": 3,
+      "name": "Manager Candidate",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1071.150,234.000,84.110,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1071.150,228.950],
+          "align": "c",
+          "width": 107.250,
+          "text": "Manager Candidate"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1071.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.3363"
+    },
+    {
+      "_gvid": 4,
+      "name": "Accept Application",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1256.150,234.000,82.570,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1256.150,228.950],
+          "align": "c",
+          "width": 105.000,
+          "text": "Accept Application"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1256.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.2937"
+    },
+    {
+      "_gvid": 5,
+      "name": "Process Manager Election Results",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3142.150,306.000,137.850,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3142.150,300.950],
+          "align": "c",
+          "width": 186.000,
+          "text": "Process Manager Election Results"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3142.1,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.8291"
+    },
+    {
+      "_gvid": 6,
+      "name": "Reserve Share",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [64.150,18.000,64.150,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [64.150,12.950],
+          "align": "c",
+          "width": 78.000,
+          "text": "Reserve Share"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "64.147,18",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.7819"
+    },
+    {
+      "_gvid": 7,
+      "name": "Never Voted",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1567.150,234.000,56.980,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1567.150,228.950],
+          "align": "c",
+          "width": 67.500,
+          "text": "Never Voted"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1567.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.5828"
+    },
+    {
+      "_gvid": 8,
+      "name": "Limit",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3736.150,234.000,31.900,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3736.150,228.950],
+          "align": "c",
+          "width": 30.750,
+          "text": "Limit"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3736.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "0.88619"
+    },
+    {
+      "_gvid": 9,
+      "name": "Draft Fee",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [192.150,18.000,46.230,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [192.150,12.950],
+          "align": "c",
+          "width": 51.750,
+          "text": "Draft Fee"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "192.15,18",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.2843"
+    },
+    {
+      "_gvid": 10,
+      "name": "Pay Out and Terminate",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [4395.150,162.000,97.410,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [4395.150,156.950],
+          "align": "c",
+          "width": 126.750,
+          "text": "Pay Out and Terminate"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "4395.1,162",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.7059"
+    },
+    {
+      "_gvid": 11,
+      "name": "Dissolution",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [4277.150,306.000,53.400,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [4277.150,300.950],
+          "align": "c",
+          "width": 62.250,
+          "text": "Dissolution"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "4277.1,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.4833"
+    },
+    {
+      "_gvid": 12,
+      "name": "RECITAL: membership",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [2332.150,306.000,101.510,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2332.150,300.950],
+          "align": "c",
+          "width": 132.750,
+          "text": "RECITAL: membership"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "2332.1,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.8197"
+    },
+    {
+      "_gvid": 13,
+      "name": "Receive Shares",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1424.150,234.000,67.730,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1424.150,228.950],
+          "align": "c",
+          "width": 83.250,
+          "text": "Receive Shares"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1424.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.8814"
+    },
+    {
+      "_gvid": 14,
+      "name": "Accept Top Up",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1424.150,306.000,67.730,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1424.150,300.950],
+          "align": "c",
+          "width": 83.250,
+          "text": "Accept Top Up"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1424.1,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.8814"
+    },
+    {
+      "_gvid": 15,
+      "name": "Wind Down",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [4143.150,234.000,56.470,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [4143.150,228.950],
+          "align": "c",
+          "width": 66.750,
+          "text": "Wind Down"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "4143.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.5686"
+    },
+    {
+      "_gvid": 16,
+      "name": "Vote",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1670.150,234.000,27.810,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1670.150,228.950],
+          "align": "c",
+          "width": 24.750,
+          "text": "Vote"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1670.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "0.77245"
+    },
+    {
+      "_gvid": 17,
+      "name": "Process Trader Election Results",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3426.150,306.000,128.630,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3426.150,300.950],
+          "align": "c",
+          "width": 172.500,
+          "text": "Process Trader Election Results"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3426.1,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.5732"
+    },
+    {
+      "_gvid": 18,
+      "name": "Count",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1463.150,162.000,33.440,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1463.150,156.950],
+          "align": "c",
+          "width": 33.000,
+          "text": "Count"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1463.1,162",
+      "shape": "oval",
+      "style": "filled",
+      "width": "0.92884"
+    },
+    {
+      "_gvid": 19,
+      "name": "Trader Fee",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [308.150,18.000,51.350,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [308.150,12.950],
+          "align": "c",
+          "width": 59.250,
+          "text": "Trader Fee"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "308.15,18",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.4264"
+    },
+    {
+      "_gvid": 20,
+      "name": "Cancel",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [4143.150,162.000,36.510,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [4143.150,156.950],
+          "align": "c",
+          "width": 37.500,
+          "text": "Cancel"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "4143.1,162",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.0141"
+    },
+    {
+      "_gvid": 21,
+      "name": "Start of the Emergency",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1813.150,234.000,97.410,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1813.150,228.950],
+          "align": "c",
+          "width": 126.750,
+          "text": "Start of the Emergency"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1813.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.7059"
+    },
+    {
+      "_gvid": 22,
+      "name": "Proposal Succeeds",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3309.150,162.000,80.010,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3309.150,156.950],
+          "align": "c",
+          "width": 101.250,
+          "text": "Proposal Succeeds"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3309.1,162",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.2226"
+    },
+    {
+      "_gvid": 23,
+      "name": "RECITAL: trader election",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [804.150,306.000,108.160,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [804.150,300.950],
+          "align": "c",
+          "width": 142.500,
+          "text": "RECITAL: trader election"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "804.15,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.0045"
+    },
+    {
+      "_gvid": 24,
+      "name": "Process Upgrade Vote",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3665.150,306.000,92.300,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3665.150,300.950],
+          "align": "c",
+          "width": 119.250,
+          "text": "Process Upgrade Vote"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3665.1,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.5638"
+    },
+    {
+      "_gvid": 25,
+      "name": "Enable Voting",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [682.150,162.000,63.120,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [682.150,156.950],
+          "align": "c",
+          "width": 76.500,
+          "text": "Enable Voting"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "682.15,162",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.7534"
+    },
+    {
+      "_gvid": 26,
+      "name": "Voted In The Current Election",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [2051.150,234.000,123.000,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2051.150,228.950],
+          "align": "c",
+          "width": 164.250,
+          "text": "Voted In The Current Election"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "2051.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.4168"
+    },
+    {
+      "_gvid": 27,
+      "name": "Distribute Gains",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [308.150,90.000,71.820,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [308.150,84.950],
+          "align": "c",
+          "width": 89.250,
+          "text": "Distribute Gains"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "308.15,90",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.9951"
+    },
+    {
+      "_gvid": 28,
+      "name": "Leave",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [4495.150,234.000,33.440,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [4495.150,228.950],
+          "align": "c",
+          "width": 33.000,
+          "text": "Leave"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "4495.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "0.92884"
+    },
+    {
+      "_gvid": 29,
+      "name": "Member",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [2235.150,234.000,43.160,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2235.150,228.950],
+          "align": "c",
+          "width": 47.250,
+          "text": "Member"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "2235.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.199"
+    },
+    {
+      "_gvid": 30,
+      "name": "Shares",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [2332.150,234.000,35.490,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2332.150,228.950],
+          "align": "c",
+          "width": 36.000,
+          "text": "Shares"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "2332.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "0.9857"
+    },
+    {
+      "_gvid": 31,
+      "name": "RECITAL: application",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3871.150,306.000,95.880,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3871.150,300.950],
+          "align": "c",
+          "width": 124.500,
+          "text": "RECITAL: application"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3871.1,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.6633"
+    },
+    {
+      "_gvid": 32,
+      "name": "Uncontrolled",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [4277.150,234.000,59.540,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [4277.150,228.950],
+          "align": "c",
+          "width": 71.250,
+          "text": "Uncontrolled"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "4277.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.6539"
+    },
+    {
+      "_gvid": 33,
+      "name": "Last Buy In",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [2440.150,234.000,54.930,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2440.150,228.950],
+          "align": "c",
+          "width": 64.500,
+          "text": "Last Buy In"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "2440.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.5259"
+    },
+    {
+      "_gvid": 34,
+      "name": "Trader Candidate",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [893.150,234.000,75.410,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [893.150,228.950],
+          "align": "c",
+          "width": 94.500,
+          "text": "Trader Candidate"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "893.15,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.0946"
+    },
+    {
+      "_gvid": 35,
+      "name": "Capital Top Up Offer",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [2604.150,234.000,90.760,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2604.150,228.950],
+          "align": "c",
+          "width": 117.000,
+          "text": "Capital Top Up Offer"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "2604.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.5211"
+    },
+    {
+      "_gvid": 36,
+      "name": "Depleted",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [4399.150,234.000,44.190,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [4399.150,228.950],
+          "align": "c",
+          "width": 48.750,
+          "text": "Depleted"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "4399.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.2274"
+    },
+    {
+      "_gvid": 37,
+      "name": "Log Results",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [163.150,90.000,55.450,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [163.150,84.950],
+          "align": "c",
+          "width": 65.250,
+          "text": "Log Results"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "163.15,90",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.5402"
+    },
+    {
+      "_gvid": 38,
+      "name": "Last Vote",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [2758.150,234.000,45.720,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2758.150,228.950],
+          "align": "c",
+          "width": 51.000,
+          "text": "Last Vote"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "2758.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.27"
+    },
+    {
+      "_gvid": 39,
+      "name": "Most Recent Proposal Succeeded",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3542.150,162.000,135.290,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3542.150,156.950],
+          "align": "c",
+          "width": 182.250,
+          "text": "Most Recent Proposal Succeeded"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3542.1,162",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.758"
+    },
+    {
+      "_gvid": 40,
+      "name": "Initial Capital Offer",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3871.150,234.000,84.620,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3871.150,228.950],
+          "align": "c",
+          "width": 108.000,
+          "text": "Initial Capital Offer"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3871.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.3505"
+    },
+    {
+      "_gvid": 41,
+      "name": "Support Share",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [441.150,18.000,63.630,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [441.150,12.950],
+          "align": "c",
+          "width": 77.250,
+          "text": "Support Share"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "441.15,18",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.7676"
+    },
+    {
+      "_gvid": 42,
+      "name": "Member Capital",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [2894.150,234.000,72.340,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [2894.150,228.950],
+          "align": "c",
+          "width": 90.000,
+          "text": "Member Capital"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "2894.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.0093"
+    },
+    {
+      "_gvid": 43,
+      "name": "Initiate The Election Process",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [682.150,234.000,117.370,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [682.150,228.950],
+          "align": "c",
+          "width": 156.000,
+          "text": "Initiate The Election Process"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "682.15,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.2604"
+    },
+    {
+      "_gvid": 44,
+      "name": "RECITAL: manager election",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [1064.150,306.000,118.910,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [1064.150,300.950],
+          "align": "c",
+          "width": 158.250,
+          "text": "RECITAL: manager election"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "1064.1,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.3031"
+    },
+    {
+      "_gvid": 45,
+      "name": "Trader Ends Trading",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [294.150,306.000,87.690,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [294.150,300.950],
+          "align": "c",
+          "width": 112.500,
+          "text": "Trader Ends Trading"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "294.15,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.4358"
+    },
+    {
+      "_gvid": 46,
+      "name": "Emergency",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3038.150,234.000,53.400,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3038.150,228.950],
+          "align": "c",
+          "width": 62.250,
+          "text": "Emergency"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3038.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.4833"
+    },
+    {
+      "_gvid": 47,
+      "name": "Payment",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [222.150,234.000,43.670,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [222.150,228.950],
+          "align": "c",
+          "width": 48.000,
+          "text": "Payment"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "222.15,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.2132"
+    },
+    {
+      "_gvid": 48,
+      "name": "Accepted Capital Offer",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3207.150,234.000,97.410,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3207.150,228.950],
+          "align": "c",
+          "width": 126.750,
+          "text": "Accepted Capital Offer"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3207.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.7059"
+    },
+    {
+      "_gvid": 49,
+      "name": "RECITAL: upgrade initiative",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [528.150,306.000,119.930,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [528.150,300.950],
+          "align": "c",
+          "width": 159.750,
+          "text": "RECITAL: upgrade initiative"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "528.15,306",
+      "shape": "oval",
+      "style": "filled",
+      "width": "3.3315"
+    },
+    {
+      "_gvid": 50,
+      "name": "End the Election Process",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [3426.150,234.000,103.560,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [3426.150,228.950],
+          "align": "c",
+          "width": 135.750,
+          "text": "End the Election Process"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "3426.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.8766"
+    },
+    {
+      "_gvid": 51,
+      "name": "Applicant",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [4021.150,234.000,47.260,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [4021.150,228.950],
+          "align": "c",
+          "width": 53.250,
+          "text": "Applicant"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "4021.1,234",
+      "shape": "oval",
+      "style": "filled",
+      "width": "1.3127"
+    },
+    {
+      "_gvid": 52,
+      "name": "Maintenance Share",
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#ffffff"
+        },
+        {
+          "op": "E",
+          "rect": [605.150,18.000,82.570,18.000]
+        }
+      ],
+      "_ldraw_": 
+      [
+        {
+          "op": "F",
+          "size": 14.000,
+          "face": "Times-Roman"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "T",
+          "pt": [605.150,12.950],
+          "align": "c",
+          "width": 105.000,
+          "text": "Maintenance Share"
+        }
+      ],
+      "fillcolor": "white",
+      "height": "0.5",
+      "label": "\\N",
+      "pos": "605.15,18",
+      "shape": "oval",
+      "style": "filled",
+      "width": "2.2937"
+    }
+  ],
+  "edges": [
+    {
+      "_gvid": 35,
+      "tail": 28,
+      "head": 10,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[4475.390,219.170],[4462.000,209.800],[4443.980,197.190],[4428.410,186.290]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[4430.530,183.500],[4420.340,180.630],[4426.520,189.230]]
+        }
+      ],
+      "pos": "e,4419.1,179.76 4475.4,219.17 4462,209.8 4444,197.19 4428.4,186.29"
+    },
+    {
+      "_gvid": 46,
+      "tail": 49,
+      "head": 1,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[505.390,288.050],[493.590,279.260],[478.970,268.380],[466.060,258.760]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[468.340,256.100],[458.230,252.940],[464.160,261.720]]
+        }
+      ],
+      "pos": "e,457.02,252.03 505.39,288.05 493.59,279.26 478.97,268.38 466.06,258.76"
+    },
+    {
+      "_gvid": 47,
+      "tail": 49,
+      "head": 43,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[564.640,288.410],[585.840,278.780],[612.750,266.540],[635.470,256.220]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[636.880,259.420],[644.530,252.100],[633.980,253.050]]
+        }
+      ],
+      "pos": "e,645.91,251.47 564.64,288.41 585.84,278.78 612.75,266.54 635.47,256.22"
+    },
+    {
+      "_gvid": 40,
+      "tail": 43,
+      "head": 25,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[682.150,215.700],[682.150,208.410],[682.150,199.730],[682.150,191.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[685.650,191.620],[682.150,181.620],[678.650,191.620]]
+        }
+      ],
+      "pos": "e,682.15,180.1 682.15,215.7 682.15,208.41 682.15,199.73 682.15,191.54"
+    },
+    {
+      "_gvid": 25,
+      "tail": 16,
+      "head": 18,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1648.430,222.460],[1643.460,220.210],[1638.160,217.930],[1633.150,216.000],[1589.520,199.260],[1538.150,183.810],[1503.390,173.960]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1504.750,170.710],[1494.170,171.380],[1502.860,177.450]]
+        }
+      ],
+      "pos": "e,1492.7,170.97 1648.4,222.46 1643.5,220.21 1638.2,217.93 1633.1,216 1589.5,199.26 1538.2,183.81 1503.4,173.96"
+    },
+    {
+      "_gvid": 1,
+      "tail": 2,
+      "head": 27,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[270.250,144.050],[276.020,135.970],[283.060,126.120],[289.500,117.110]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[292.310,119.190],[295.270,109.020],[286.610,115.120]]
+        }
+      ],
+      "pos": "e,296.15,107.79 270.25,144.05 276.02,135.97 283.06,126.12 289.5,117.11"
+    },
+    {
+      "_gvid": 2,
+      "tail": 2,
+      "head": 37,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[236.110,144.760],[223.550,135.510],[207.620,123.770],[193.850,113.630]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[196.080,110.920],[185.950,107.800],[191.930,116.550]]
+        }
+      ],
+      "pos": "e,184.73,106.91 236.11,144.76 223.55,135.51 207.62,123.77 193.85,113.63"
+    },
+    {
+      "_gvid": 3,
+      "tail": 2,
+      "head": 47,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[255.240,180.120],[251.910,188.240],[247.050,198.100],[242.010,207.110]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[239.140,205.070],[237.070,215.460],[245.170,208.630]]
+        }
+      ],
+      "pos": "e,236.3,216.76 255.24,180.12 251.91,188.24 247.05,198.1 242.01,207.11"
+    },
+    {
+      "_gvid": 31,
+      "tail": 27,
+      "head": 9,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[281.530,72.940],[264.940,62.930],[243.440,49.960],[225.690,39.240]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[227.930,36.510],[217.560,34.340],[224.320,42.500]]
+        }
+      ],
+      "pos": "e,216.27,33.555 281.53,72.941 264.94,62.928 243.44,49.955 225.69,39.242"
+    },
+    {
+      "_gvid": 33,
+      "tail": 27,
+      "head": 41,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[337.990,73.290],[356.860,63.360],[381.460,50.410],[401.900,39.660]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[403.300,42.880],[410.520,35.120],[400.040,36.680]]
+        }
+      ],
+      "pos": "e,411.86,34.416 337.99,73.291 356.86,63.359 381.46,50.415 401.9,39.656"
+    },
+    {
+      "_gvid": 34,
+      "tail": 27,
+      "head": 52,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[359.200,76.970],[409.090,65.210],[485.240,47.260],[539.580,34.450]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[540.080,37.930],[549.010,32.230],[538.480,31.120]]
+        }
+      ],
+      "pos": "e,550.49,31.883 359.2,76.967 409.09,65.209 485.24,47.261 539.58,34.453"
+    },
+    {
+      "_gvid": 30,
+      "tail": 27,
+      "head": 6,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[262.250,75.830],[221.490,64.140],[161.850,47.030],[118.660,34.640]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[119.820,31.330],[109.240,31.940],[117.890,38.060]]
+        }
+      ],
+      "pos": "e,107.78,31.519 262.25,75.834 221.49,64.139 161.85,47.029 118.66,34.64"
+    },
+    {
+      "_gvid": 32,
+      "tail": 27,
+      "head": 19,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[308.150,71.700],[308.150,64.410],[308.150,55.730],[308.150,47.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[311.650,47.620],[308.150,37.620],[304.650,47.620]]
+        }
+      ],
+      "pos": "e,308.15,36.104 308.15,71.697 308.15,64.407 308.15,55.726 308.15,47.536"
+    },
+    {
+      "_gvid": 39,
+      "tail": 37,
+      "head": 47,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[164.610,108.430],[166.670,126.900],[171.450,156.570],[182.150,180.000],[186.670,189.900],[193.300,199.710],[199.870,208.150]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[197.140,210.340],[206.180,215.860],[202.550,205.900]]
+        }
+      ],
+      "pos": "e,207.14,217.03 164.61,108.43 166.67,126.9 171.45,156.57 182.15,180 186.67,189.9 193.3,199.71 199.87,208.15"
+    },
+    {
+      "_gvid": 45,
+      "tail": 47,
+      "head": 2,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[225.130,215.700],[228.380,207.780],[233.080,198.230],[237.980,189.440]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[240.940,191.320],[242.990,180.930],[234.900,187.770]]
+        }
+      ],
+      "pos": "e,243.75,179.62 225.13,215.7 228.38,207.78 233.08,198.23 237.98,189.44"
+    },
+    {
+      "_gvid": 0,
+      "tail": 0,
+      "head": 47,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[165.350,289.460],[174.760,280.440],[186.810,268.880],[197.390,258.730]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[199.600,261.470],[204.390,252.020],[194.750,256.420]]
+        }
+      ],
+      "pos": "e,205.48,250.98 165.35,289.46 174.76,280.44 186.81,268.88 197.39,258.73"
+    },
+    {
+      "_gvid": 11,
+      "tail": 12,
+      "head": 16,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2234.320,300.820],[2084.140,293.720],[1803.960,277.510],[1707.150,252.000],[1705.400,251.540],[1703.630,251.000],[1701.860,250.400]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1703.200,247.170],[1692.610,246.750],[1700.620,253.680]]
+        }
+      ],
+      "pos": "e,1691.2,246.19 2234.3,300.82 2084.1,293.72 1804,277.51 1707.1,252 1705.4,251.54 1703.6,251 1701.9,250.4"
+    },
+    {
+      "_gvid": 21,
+      "tail": 12,
+      "head": 48,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2430.300,301.020],[2576.570,294.450],[2860.290,279.280],[3100.150,252.000],[3108.690,251.030],[3117.590,249.860],[3126.450,248.600]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3126.740,252.100],[3136.130,247.180],[3125.720,245.170]]
+        }
+      ],
+      "pos": "e,3137.6,246.96 2430.3,301.02 2576.6,294.45 2860.3,279.28 3100.1,252 3108.7,251.03 3117.6,249.86 3126.5,248.6"
+    },
+    {
+      "_gvid": 20,
+      "tail": 12,
+      "head": 46,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2432.000,302.370],[2559.030,297.750],[2784.810,285.240],[2975.150,252.000],[2979.420,251.250],[2983.820,250.350],[2988.220,249.350]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2988.710,252.840],[2997.600,247.080],[2987.060,246.030]]
+        }
+      ],
+      "pos": "e,2999.1,246.72 2432,302.37 2559,297.75 2784.8,285.24 2975.1,252 2979.4,251.25 2983.8,250.35 2988.2,249.35"
+    },
+    {
+      "_gvid": 17,
+      "tail": 12,
+      "head": 35,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2388.180,290.580],[2432.140,279.270],[2493.390,263.500],[2539.440,251.650]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2540.230,255.060],[2549.040,249.180],[2538.480,248.280]]
+        }
+      ],
+      "pos": "e,2550.5,248.8 2388.2,290.58 2432.1,279.27 2493.4,263.5 2539.4,251.65"
+    },
+    {
+      "_gvid": 13,
+      "tail": 12,
+      "head": 26,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2274.940,290.750],[2230.970,279.800],[2169.960,264.600],[2122.740,252.840]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2123.690,249.460],[2113.140,250.440],[2122.000,256.260]]
+        }
+      ],
+      "pos": "e,2111.7,250.08 2274.9,290.75 2231,279.8 2170,264.6 2122.7,252.84"
+    },
+    {
+      "_gvid": 10,
+      "tail": 12,
+      "head": 13,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2231.220,303.550],[2074.330,300.180],[1762.730,288.990],[1501.150,252.000],[1495.530,251.210],[1489.710,250.220],[1483.910,249.130]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1484.800,245.740],[1474.310,247.220],[1483.430,252.610]]
+        }
+      ],
+      "pos": "e,1472.8,246.93 2231.2,303.55 2074.3,300.18 1762.7,288.99 1501.1,252 1495.5,251.21 1489.7,250.22 1483.9,249.13"
+    },
+    {
+      "_gvid": 9,
+      "tail": 12,
+      "head": 7,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2231.650,302.940],[2095.260,298.880],[1844.320,286.920],[1633.150,252.000],[1628.740,251.270],[1624.200,250.390],[1619.660,249.410]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1620.460,246.000],[1609.930,247.170],[1618.890,252.830]]
+        }
+      ],
+      "pos": "e,1608.5,246.83 2231.6,302.94 2095.3,298.88 1844.3,286.92 1633.1,252 1628.7,251.27 1624.2,250.39 1619.7,249.41"
+    },
+    {
+      "_gvid": 19,
+      "tail": 12,
+      "head": 42,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2422.920,297.650],[2519.890,289.170],[2677.920,273.590],[2813.150,252.000],[2819.000,251.070],[2825.070,249.990],[2831.130,248.850]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2831.370,252.370],[2840.510,247.010],[2830.030,245.500]]
+        }
+      ],
+      "pos": "e,2842,246.72 2422.9,297.65 2519.9,289.17 2677.9,273.59 2813.1,252 2819,251.07 2825.1,249.99 2831.1,248.85"
+    },
+    {
+      "_gvid": 16,
+      "tail": 12,
+      "head": 33,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2358.020,288.230],[2372.690,278.720],[2391.220,266.710],[2406.950,256.510]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2408.580,259.630],[2415.060,251.260],[2404.770,253.760]]
+        }
+      ],
+      "pos": "e,2416.3,250.43 2358,288.23 2372.7,278.72 2391.2,266.71 2407,256.51"
+    },
+    {
+      "_gvid": 15,
+      "tail": 12,
+      "head": 30,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2332.150,287.700],[2332.150,280.410],[2332.150,271.730],[2332.150,263.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2335.650,263.620],[2332.150,253.620],[2328.650,263.620]]
+        }
+      ],
+      "pos": "e,2332.1,252.1 2332.1,287.7 2332.1,280.41 2332.1,271.73 2332.1,263.54"
+    },
+    {
+      "_gvid": 12,
+      "tail": 12,
+      "head": 21,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2249.770,295.200],[2166.330,285.090],[2033.620,268.520],[1919.150,252.000],[1911.440,250.890],[1903.420,249.680],[1895.400,248.450]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1896.000,245.000],[1885.580,246.930],[1894.930,251.920]]
+        }
+      ],
+      "pos": "e,1884.1,246.69 2249.8,295.2 2166.3,285.09 2033.6,268.52 1919.1,252 1911.4,250.89 1903.4,249.68 1895.4,248.45"
+    },
+    {
+      "_gvid": 14,
+      "tail": 12,
+      "head": 29,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2308.670,288.050],[2295.640,278.650],[2279.290,266.860],[2265.320,256.780]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2267.490,254.020],[2257.330,251.010],[2263.390,259.700]]
+        }
+      ],
+      "pos": "e,2256.1,250.12 2308.7,288.05 2295.6,278.65 2279.3,266.86 2265.3,256.78"
+    },
+    {
+      "_gvid": 18,
+      "tail": 12,
+      "head": 38,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[2419.700,296.610],[2495.550,288.380],[2607.930,273.850],[2704.150,252.000],[2707.250,251.300],[2710.430,250.500],[2713.610,249.640]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[2714.280,253.090],[2722.930,246.970],[2712.350,246.360]]
+        }
+      ],
+      "pos": "e,2724.4,246.56 2419.7,296.61 2495.6,288.38 2607.9,273.85 2704.1,252 2707.2,251.3 2710.4,250.5 2713.6,249.64"
+    },
+    {
+      "_gvid": 23,
+      "tail": 15,
+      "head": 10,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[4184.760,221.440],[4224.790,210.320],[4285.870,193.360],[4331.920,180.560]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[4332.820,183.940],[4341.520,177.900],[4330.950,177.200]]
+        }
+      ],
+      "pos": "e,4343,177.49 4184.8,221.44 4224.8,210.32 4285.9,193.36 4331.9,180.56"
+    },
+    {
+      "_gvid": 24,
+      "tail": 15,
+      "head": 20,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[4143.150,215.700],[4143.150,208.410],[4143.150,199.730],[4143.150,191.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[4146.650,191.620],[4143.150,181.620],[4139.650,191.620]]
+        }
+      ],
+      "pos": "e,4143.1,180.1 4143.1,215.7 4143.1,208.41 4143.1,199.73 4143.1,191.54"
+    },
+    {
+      "_gvid": 42,
+      "tail": 44,
+      "head": 43,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[990.490,291.500],[926.420,279.760],[833.570,262.750],[766.520,250.460]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[767.530,247.090],[757.060,248.730],[766.270,253.970]]
+        }
+      ],
+      "pos": "e,755.57,248.46 990.49,291.5 926.42,279.76 833.57,262.75 766.52,250.46"
+    },
+    {
+      "_gvid": 41,
+      "tail": 44,
+      "head": 3,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1065.880,287.700],[1066.610,280.410],[1067.470,271.730],[1068.290,263.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1071.770,263.910],[1069.290,253.610],[1064.810,263.210]]
+        }
+      ],
+      "pos": "e,1069.4,252.1 1065.9,287.7 1066.6,280.41 1067.5,271.73 1068.3,263.54"
+    },
+    {
+      "_gvid": 28,
+      "tail": 23,
+      "head": 43,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[774.920,288.230],[758.900,279.040],[738.810,267.510],[721.420,257.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[723.280,254.570],[712.870,252.630],[719.800,260.640]]
+        }
+      ],
+      "pos": "e,711.55,251.87 774.92,288.23 758.9,279.04 738.81,267.51 721.42,257.54"
+    },
+    {
+      "_gvid": 27,
+      "tail": 23,
+      "head": 34,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[825.690,288.050],[836.920,279.220],[850.840,268.270],[863.120,258.620]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[865.220,261.420],[870.920,252.480],[860.890,255.910]]
+        }
+      ],
+      "pos": "e,872.11,251.55 825.69,288.05 836.92,279.22 850.84,268.27 863.12,258.62"
+    },
+    {
+      "_gvid": 4,
+      "tail": 4,
+      "head": 18,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1299.540,218.330],[1336.450,205.850],[1388.960,188.090],[1424.450,176.080]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1425.550,179.410],[1433.900,172.890],[1423.310,172.780]]
+        }
+      ],
+      "pos": "e,1435.3,172.4 1299.5,218.33 1336.4,205.85 1389,188.09 1424.5,176.08"
+    },
+    {
+      "_gvid": 26,
+      "tail": 17,
+      "head": 50,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[3426.150,287.700],[3426.150,280.410],[3426.150,271.730],[3426.150,263.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3429.650,263.620],[3426.150,253.620],[3422.650,263.620]]
+        }
+      ],
+      "pos": "e,3426.1,252.1 3426.1,287.7 3426.1,280.41 3426.1,271.73 3426.1,263.54"
+    },
+    {
+      "_gvid": 49,
+      "tail": 50,
+      "head": 39,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[3453.930,216.230],[3469.030,207.120],[3487.920,195.720],[3504.340,185.820]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3506.140,188.820],[3512.890,180.650],[3502.520,182.820]]
+        }
+      ],
+      "pos": "e,3514.2,179.87 3453.9,216.23 3469,207.12 3487.9,195.72 3504.3,185.82"
+    },
+    {
+      "_gvid": 48,
+      "tail": 50,
+      "head": 22,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[3398.120,216.230],[3382.520,206.900],[3362.920,195.170],[3346.080,185.100]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3348.220,182.300],[3337.840,180.170],[3344.620,188.300]]
+        }
+      ],
+      "pos": "e,3336.5,179.39 3398.1,216.23 3382.5,206.9 3362.9,195.17 3346.1,185.1"
+    },
+    {
+      "_gvid": 6,
+      "tail": 11,
+      "head": 15,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[4249.060,290.330],[4229.530,280.130],[4203.270,266.410],[4181.780,255.180]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[4183.490,252.120],[4173.000,250.600],[4180.250,258.330]]
+        }
+      ],
+      "pos": "e,4171.7,249.9 4249.1,290.33 4229.5,280.13 4203.3,266.41 4181.8,255.18"
+    },
+    {
+      "_gvid": 8,
+      "tail": 11,
+      "head": 36,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[4303.320,289.980],[4321.120,279.770],[4344.880,266.140],[4364.290,255.000]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[4366.020,258.040],[4372.950,250.030],[4362.540,251.970]]
+        }
+      ],
+      "pos": "e,4374.3,249.27 4303.3,289.98 4321.1,279.77 4344.9,266.14 4364.3,255"
+    },
+    {
+      "_gvid": 7,
+      "tail": 11,
+      "head": 32,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[4277.150,287.700],[4277.150,280.410],[4277.150,271.730],[4277.150,263.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[4280.650,263.620],[4277.150,253.620],[4273.650,263.620]]
+        }
+      ],
+      "pos": "e,4277.1,252.1 4277.1,287.7 4277.1,280.41 4277.1,271.73 4277.1,263.54"
+    },
+    {
+      "_gvid": 5,
+      "tail": 5,
+      "head": 50,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[3204.820,289.550],[3249.790,278.470],[3310.390,263.530],[3356.810,252.090]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3357.640,255.490],[3366.520,249.700],[3355.970,248.690]]
+        }
+      ],
+      "pos": "e,3368,249.34 3204.8,289.55 3249.8,278.47 3310.4,263.53 3356.8,252.09"
+    },
+    {
+      "_gvid": 43,
+      "tail": 45,
+      "head": 2,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[291.010,287.820],[287.590,269.800],[281.740,240.730],[275.150,216.000],[272.950,207.750],[270.240,198.880],[267.640,190.800]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[271.030,189.900],[264.570,181.490],[264.380,192.090]]
+        }
+      ],
+      "pos": "e,264.1,180.06 291.01,287.82 287.59,269.8 281.74,240.73 275.15,216 272.95,207.75 270.24,198.88 267.64,190.8"
+    },
+    {
+      "_gvid": 44,
+      "tail": 45,
+      "head": 47,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[276.720,288.050],[267.610,279.200],[256.330,268.230],[246.390,258.570]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[249.120,256.350],[239.510,251.880],[244.240,261.360]]
+        }
+      ],
+      "pos": "e,238.43,250.83 276.72,288.05 267.61,279.2 256.33,268.23 246.39,258.57"
+    },
+    {
+      "_gvid": 29,
+      "tail": 24,
+      "head": 50,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[3615.340,290.410],[3578.450,279.610],[3527.940,264.810],[3488.390,253.230]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3489.580,249.930],[3479.000,250.480],[3487.610,256.650]]
+        }
+      ],
+      "pos": "e,3477.5,250.05 3615.3,290.41 3578.4,279.61 3527.9,264.81 3488.4,253.23"
+    },
+    {
+      "_gvid": 22,
+      "tail": 14,
+      "head": 13,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[1424.150,287.700],[1424.150,280.410],[1424.150,271.730],[1424.150,263.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[1427.650,263.620],[1424.150,253.620],[1420.650,263.620]]
+        }
+      ],
+      "pos": "e,1424.1,252.1 1424.1,287.7 1424.1,280.41 1424.1,271.73 1424.1,263.54"
+    },
+    {
+      "_gvid": 37,
+      "tail": 31,
+      "head": 40,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[3871.150,287.700],[3871.150,280.410],[3871.150,271.730],[3871.150,263.540]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3874.650,263.620],[3871.150,253.620],[3867.650,263.620]]
+        }
+      ],
+      "pos": "e,3871.1,252.1 3871.1,287.7 3871.1,280.41 3871.1,271.73 3871.1,263.54"
+    },
+    {
+      "_gvid": 38,
+      "tail": 31,
+      "head": 51,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[3905.940,288.760],[3928.600,278.190],[3958.220,264.360],[3981.760,253.380]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3983.140,256.600],[3990.720,249.200],[3980.180,250.260]]
+        }
+      ],
+      "pos": "e,3992.1,248.56 3905.9,288.76 3928.6,278.19 3958.2,264.36 3981.8,253.38"
+    },
+    {
+      "_gvid": 36,
+      "tail": 31,
+      "head": 8,
+      "_draw_": 
+      [
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "b",
+          "points": [[3839.500,288.590],[3818.330,277.610],[3790.540,263.210],[3769.110,252.090]]
+        }
+      ],
+      "_hdraw_": 
+      [
+        {
+          "op": "S",
+          "style": "solid"
+        },
+        {
+          "op": "c",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "C",
+          "grad": "none",
+          "color": "#000000"
+        },
+        {
+          "op": "P",
+          "points": [[3770.990,249.130],[3760.500,247.630],[3767.770,255.340]]
+        }
+      ],
+      "pos": "e,3759.2,246.93 3839.5,288.59 3818.3,277.61 3790.5,263.21 3769.1,252.09"
+    }
+  ]
+}

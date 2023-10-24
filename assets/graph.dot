@@ -1,0 +1,18 @@
+digraph "View" {
+	graph [concentrate=false,
+		overlap=false,
+		directed=true,
+		splines=true
+	];
+
+	Top [fillcolor="red", shape="rectangle", style="filled,rounded,dotted"];
+	Right [fillcolor="yellow", shape="rectangle", style="filled,rounded,dashed"];
+	Bottom [fillcolor="green", shape="ellipse", style="filled,solid"];
+	Start [polySides=5, shape="pentagon", style="filled,solid"];
+
+	Top -> Right
+	Top -> Bottom
+	Top -> Start
+	Bottom -> Right
+	Start -> Bottom
+}

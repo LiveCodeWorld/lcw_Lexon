@@ -1,0 +1,18 @@
+digraph Lexon_cc_1 {
+	graph [bgcolor=lightblue,
+		concentrate=false,
+		overlap=false,
+		splines=true
+	];
+	node [fillcolor=white,
+		shape=oval,
+		style=filled
+	];
+	"RECITAL: upgrade initiative" -> "Amended Bylaws Proposal";
+	"RECITAL: upgrade initiative" -> "Initiate The Election Process";
+	"Initiate The Election Process" -> "Enable Voting";
+	"RECITAL: manager election" -> "Initiate The Election Process";
+	"RECITAL: manager election" -> "Manager Candidate";
+	"RECITAL: trader election" -> "Initiate The Election Process";
+	"RECITAL: trader election" -> "Trader Candidate";
+}

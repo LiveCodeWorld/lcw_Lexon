@@ -26,6 +26,35 @@ command clause_Deconstruct @someClause, @clauseTitle
 end clause_Deconstruct
 
 
+--> Lexon | Local | Model
+-
+function lexon_GetContractData lexFile
+   put url ("file:" & lexFile) into lexBody
+   put lexon_DataFromContract (lexBody) into dData
+   return dData
+end lexon_GetContractData
+
+
+--> Lexon | Files
+-
+function lexon_ConstructFile pShortFile
+   put lexon_GetContractFolder() into lexFolder
+   if pShortFile is empty then
+      answer file "Select a Lexon contract..." with lexFolder
+      if it is empty then exit to top
+      put it into lexFile
+   else
+      put lexFolder & pShortFile into lexFile
+   end if
+   return lexFile
+end lexon_ConstructFile
+
+function lexon_GetContractFolder
+   put the project_AssetFolder of stack "lcw_Lexon" into contractFolder
+   return contractFolder
+end lexon_GetContractFolder
+
+
 --> Lexon | List
 -
 function lexon_ListClauseTitles dData
@@ -43,14 +72,6 @@ function lexon_ListClauseTitles dData
    sort lines of clauseTitles
    return word 1 to -1 of clauseTitles
 end lexon_ListClauseTitles
-
-command _CreateClauseLines @someClause
-   -- this should not change the wordNum
-   replace "." with CR in someClause
-   replace "," with CR in someClause
-   replace ";" with CR in someClause
-   replace ":" with CR in someClause
-end _CreateClauseLines
 
 function lexon_ListContractTermTitles dData
    -- easier to take from termData
@@ -121,8 +142,172 @@ function lexon_GetTitle sTitle
 end lexon_GetTitle
 
 
+--> Lexon | Contract | TermData
+-
+function lexon_DataFromContract lexBody
+   put lexon_ConstructTermIndexData (lexBody) into termData
+   put lexon_ConstructDataViewArray (termData) into dData
+   return dData
+end lexon_DataFromContract
+
+function lexon_ConstructTermIndexData lexText
+   -- construct a structured array from the contract text
+   -- split the array into sections based on  TERM SECTIONS.
+   
+   local nextTermPage
+   put "_Metadata" into pageTitle
+   put 1 into tSectionNum
+   put word 1 to -1 of lexText into lexText
+   --
+   repeat for each line someLine in lexText
+      put word 1 to -1 of someLine into someLine
+      if someLine is empty then next repeat
+      --
+      if _EndsWithTerms (someLine) is true then
+         put lexon_ParsePageSections (nextTermPage) into sectionArray
+         --
+         if sectionArray is an array then
+            put pageTitle into termIndexData [tSectionNum]["title"]
+            put sectionArray into termIndexData [tSectionNum]["term"]
+            add 1 to tSectionNum
+         end if
+         
+         -- now start next page section
+         put word 1 to -1 of someLine into pageTitle
+         if char -1 of pageTitle = "." then delete char -1 of pageTitle
+         put empty into nextTermPage
+      else
+         put someLine & CR after nextTermPage
+      end if
+   end repeat
+   --
+   if nextTermPage is not empty then
+      put lexon_ParsePageSections (nextTermPage) into sectionArray
+      if sectionArray is an array then
+         put pageTitle into termIndexData [tSectionNum]["title"]
+         put sectionArray into termIndexData [tSectionNum]["term"]
+      end if
+   end if
+   --
+   return termIndexData
+end lexon_ConstructTermIndexData
+
+function lexon_ParsePageSections lexTermPage
+   local sectionArray, nextSection
+   
+   put "_Untitled" into nextSectionTitle
+   put 1 into tPageNum
+   --
+   set the itemdelimiter to ":"
+   repeat for each line someLine in lexTermPage
+      put word 1 to -1 of someLine into someLine
+      if someLine is empty then next repeat
+      --
+      if _IsAllCaps (someLine) is true then
+         put word 1 to -1 of nextSection into nextSection
+         if nextSection is not empty then
+            put lexon_ParseSection (nextSection) into clauseArray
+            --
+            put nextSectionTitle into sectionArray [tPageNum]["title"]
+            put clauseArray into sectionArray [tPageNum]["section"]
+            --
+            add 1 to tPageNum
+         end if
+         
+         -- now start next page section
+         put _GetSectionTitle (someLine) into nextSectionTitle
+         put empty into nextSection
+      else
+         put someLine & CR after nextSection
+      end if
+   end repeat
+   --
+   if nextSection is not empty then
+      put lexon_ParseSection (nextSection) into clauseArray
+      --
+      put nextSectionTitle into sectionArray [tPageNum]["title"]
+      put clauseArray into sectionArray [tPageNum]["section"]
+   end if
+   --
+   return sectionArray
+end lexon_ParsePageSections
+
+function lexon_ParseSection someSection
+   local nextClause, clauseArray
+   
+   put "_Untitled" into nextClauseTitle
+   put 1 into tClauseNum
+   put word 1 to -1 of someSection into someSection
+   --
+   set the itemdelimiter to ":"
+   repeat for each line someLine in someSection
+      put word 1 to -1 of someLine into someLine
+      if someLine is empty then next repeat
+      --
+      put lexon_IsClauseTitle (someLine) into isClauseTitle
+      --
+      switch
+         case isClauseTitle AND nextClause is empty
+            put lexon_GetTitle (someLine) into nextClauseTitle
+            break
+         case isClauseTitle
+            put nextClauseTitle into clauseArray [tClauseNum]["title"]
+            put nextClause into clauseArray [tClauseNum]["clause"]
+            add 1 to tClauseNum
+            --
+            put lexon_GetTitle (someLine) into nextClauseTitle
+            put empty into nextClause
+            break
+         default
+            put someLine & CR after nextClause
+      end switch
+   end repeat
+   --
+   if nextClause is not empty AND nextClauseTitle is not empty then
+      put nextClauseTitle into clauseArray [tClauseNum]["title"]
+      put nextClause into clauseArray [tClauseNum]["clause"]
+   end if
+   
+   return clauseArray
+end lexon_ParseSection
+
+
 --> Private
 -
+private function _EndsWithTerms someLine   
+   switch word -1 of someLine
+      case "TERMS."
+      case "TERMS"
+         return true
+      default
+         return false
+   end switch
+end _EndsWithTerms
+
+private function _IsAllCaps someLine
+   put word 1 to -1 of someLine into someLine
+   switch
+      case someLine = "---"
+      case someLine is empty
+         return false -- hack
+      default
+         return text_IsCaps (someLine)
+   end switch
+end _IsAllCaps
+
+private function _GetSectionTitle someLine
+   put word 1 to -1 of someLine into titleLine
+   if char -1 of titleLine = "." then delete char -1 of titleLine
+   switch item 1 of titleLine
+      case "SECTION"
+         put word 1 to -1 of item 2 to -1 of titleLine into sectionTitle
+         break
+      default
+         put titleLine into sectionTitle
+   end switch
+   return sectionTitle
+end _GetSectionTitle
+
 private function text_IsCaps someText
    put "^[^a-z]*$" into someReg
    get matchtext (word 1 to -1 of someText, someReg)

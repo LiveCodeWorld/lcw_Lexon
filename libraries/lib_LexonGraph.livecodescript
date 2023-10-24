@@ -12,14 +12,15 @@ version: 0.1
 
 --> Working on
 -
+
+--> Display | Lexon | Graph
+-
 command display_LexonContractGraph dData, pShortFile, pGraphStyle, pNotTheseDefs
    put "Lexon" into graphName
+   put lexon_ConstructFile (pShortFile) into dotFile
    --
    put lexon_GetContractLinkArray (dData, pNotTheseDefs) into linkArray
    delete variable linkArray ["GENERAL: definitions."]
-   --
-   put the project_AssetFolder of stack "lcw_Lexon" into projectAssetFolder
-   put projectAssetFolder & pShortFile into dotFile
    --
    put lexon_ConstructGroupStyleArray (dData) into dotGroupStyleArray
    put dot_ConstructDefSection (dotGroupStyleArray, linkArray) into defSection
@@ -29,11 +30,13 @@ command display_LexonContractGraph dData, pShortFile, pGraphStyle, pNotTheseDefs
    put "oval" into defaultShape
    --
    put dot_FromLinkArray (linkArray, pGraphStyle, "lightblue",  concentrate, defaultShape, defSection, graphName) into dotText
-   -- display_Text dotText, graphName
    --
-   dot_CreateGraph dotText, dotFile, pGraphStyle
-   put the result into svgFile
-   display_SVG svgFile, graphName
+   display_DotTextSvg dotText, dotFile, pGraphStyle
+   put the result into svgView
+   --
+   set the link_Array of svgView to linkArray
+   set the dot_StyleArray of svgView to dotGroupStyleArray
+   set the dv_Data of svgView to dData
    --
    return svgFile
 end display_LexonContractGraph

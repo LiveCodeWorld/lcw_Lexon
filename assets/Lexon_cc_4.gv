@@ -1,0 +1,16 @@
+digraph Lexon_cc_4 {
+	graph [bgcolor=lightblue,
+		concentrate=false,
+		overlap=false,
+		splines=true
+	];
+	node [fillcolor=white,
+		shape=oval,
+		style=filled
+	];
+	"Process Trader Election Results" -> "End the Election Process";
+	"End the Election Process" -> "Most Recent Proposal Succeeded";
+	"End the Election Process" -> "Proposal Succeeds";
+	"Process Manager Election Results" -> "End the Election Process";
+	"Process Upgrade Vote" -> "End the Election Process";
+}

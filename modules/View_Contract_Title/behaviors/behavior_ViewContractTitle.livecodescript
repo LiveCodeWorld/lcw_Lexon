@@ -263,7 +263,7 @@ private function _TextRect pControlRect, pUseFormatted
    --
    put the view_Margin of me into someMargin
    put the row_LeftMargin of me into labelFieldWidth
-   put the min_Height of me into minHeight
+   put the min_Height of me into mHeight
    --
    put pControlRect into tRect
    --
@@ -278,11 +278,11 @@ private function _TextRect pControlRect, pUseFormatted
       put item 4 of tRect - fTop into fHeight
    end if
    --
-   put max (minHeight,fHeight) into fHeight
+   put max (mHeight,fHeight) into fHeight
    put fTop + fHeight into labelBottom
    --
    put labelBottom into item 4 of tRect
-   --
+   -- 
    return tRect
 end _TextRect
 

@@ -1,0 +1,27 @@
+digraph Lexon_cc_2 {
+	graph [bgcolor=lightblue,
+		concentrate=false,
+		overlap=false,
+		splines=true
+	];
+	node [fillcolor=white,
+		shape=oval,
+		style=filled
+	];
+	Vote -> Count;
+	"RECITAL: membership" -> Vote;
+	"RECITAL: membership" -> "Accepted Capital Offer";
+	"RECITAL: membership" -> Emergency;
+	"RECITAL: membership" -> "Capital Top Up Offer";
+	"RECITAL: membership" -> "Voted In The Current Election";
+	"RECITAL: membership" -> "Receive Shares";
+	"RECITAL: membership" -> "Never Voted";
+	"RECITAL: membership" -> "Member Capital";
+	"RECITAL: membership" -> "Last Buy In";
+	"RECITAL: membership" -> Shares;
+	"RECITAL: membership" -> "Start of the Emergency";
+	"RECITAL: membership" -> Member;
+	"RECITAL: membership" -> "Last Vote";
+	"Accept Application" -> Count;
+	"Accept Top Up" -> "Receive Shares";
+}

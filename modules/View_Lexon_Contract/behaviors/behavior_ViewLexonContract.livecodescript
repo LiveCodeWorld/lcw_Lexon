@@ -378,8 +378,12 @@ To make it compatible with LCW Layouts we add the follwoing handlers.
 on LayoutControl pControlRect
    -- not a good idea as nesting can causee issues. let's dop a check
    if the long id of the target is not the long id of me then pass LayoutControl
+   if pControlRect is empty then put the rect of me into pControlRect
    
+   lock screen
+   set the rect of me to pControlRect
    ResizeToFit
+   unlock screen
 end LayoutControl
 
 

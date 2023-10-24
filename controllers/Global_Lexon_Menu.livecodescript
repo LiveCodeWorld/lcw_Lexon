@@ -48,13 +48,13 @@ end submenu_Dev
 --> Dev | Menu
 -
 on menu_LexonDataViewArray
-   put lexon_FetchDataFromHackMD ("HyQ8s2di_") into dData
+   put hackMD_FetchLexonData ("HyQ8s2di_") into dData
    --
    display_Data dData, hackmdID, "Lexon Contract"
 end menu_LexonDataViewArray
 
 on menu_LexonContractData
-   put lexon_FetchContract ("HyQ8s2di_", false) into lexBody
+   put hackMD_FetchLexonContract ("HyQ8s2di_", false) into lexBody
    --
    display_LexonContract lexBody
 end menu_LexonContractData

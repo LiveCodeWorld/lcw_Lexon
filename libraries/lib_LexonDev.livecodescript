@@ -445,41 +445,6 @@ repeat 100 -- for safety
 end repeat
 end text_StripTitles
 
--- function lexon_GetLinkTypeArray rowData, dData
--- this is broken due to smaller phrases over-riding long ones
-put rowData ["links"] into clauseArray
---
-put lexon_GetTermTitleArray (dData) into termTitleData
--- display_Data termTitleData, "termTitleData"
-put termTitleData ["termTitleDictionary"] into termTitleDictionary
---
-put lexon_GetContractDefArray (dData) into contractDefArray
--- display_Data contractDefArray, "contractDefArray"
---
-put lexon_GetClauseTitleArray (dData) into cTitleArray
--- display_Data cTitleArray, "lexon_GetClauseTitleArray"
---
-repeat with itemNum = 1 to item 2 of the extents of clauseArray
-   put clauseArray [itemNum] into phraseArray
-   put phraseArray ["text"] into somePhrase
-   lexon_StripPunctuation somePhrase
-   switch
-      case somePhrase is among the keys of contractDefArray
-         put phraseArray into linkTypeArray ["def"][somePhrase]
-         break
-      case somePhrase is among the keys of termTitleDictionary
-         put phraseArray into linkTypeArray ["term"][somePhrase]
-         break
-      case somePhrase is among the keys of cTitleArray
-         put phraseArray into linkTypeArray ["clause"][somePhrase]
-         break
-      default
-         put phraseArray into linkTypeArray ["unknown"][somePhrase]
-   end switch
-end repeat
-return linkTypeArray
-end lexon_GetLinkTypeArray
-
 -- function lexon_GetClauseTitleArray dData
 repeat with itemNum = 1 to item 2 of the extents of dData
    put dData [itemNum] into itemArray
